@@ -34,7 +34,7 @@
                 <mxCell id="62zteDxsuhI17m89XYj7-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry y="960" width="820" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="62zteDxsuhI17m89XYj7-2" value="adres:&lt;br&gt;&lt;br&gt;lorem ipsum 99&lt;br&gt;7474 AB&lt;br&gt;Atlantis&lt;br&gt;026-123456789" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="62zteDxsuhI17m89XYj7-2" value="contact informatie:&lt;br&gt;&lt;br&gt;lorem ipsum 99&lt;br&gt;7474 AB&lt;br&gt;Atlantis&lt;br&gt;026-123456789" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
                     <mxGeometry x="10" y="1000" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="62zteDxsuhI17m89XYj7-3" value="openingstijden:&lt;br&gt;&lt;br&gt;&lt;br&gt;00:00-23:59" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
@@ -105,7 +105,7 @@
                 <mxCell id="Sgo3bMJdrruMT1BJYW7A-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="4" y="900" width="820" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="Sgo3bMJdrruMT1BJYW7A-2" value="adres:&lt;br&gt;&lt;br&gt;lorem ipsum 99&lt;br&gt;7474 AB&lt;br&gt;Atlantis&lt;br&gt;026-123456789" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="Sgo3bMJdrruMT1BJYW7A-2" value="cpntact informatie:&lt;br&gt;&lt;br&gt;lorem ipsum 99&lt;br&gt;7474 AB&lt;br&gt;Atlantis&lt;br&gt;026-123456789" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
                     <mxGeometry x="14" y="940" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="Sgo3bMJdrruMT1BJYW7A-3" value="openingstijden:&lt;br&gt;&lt;br&gt;&lt;br&gt;00:00-23:59" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
@@ -143,7 +143,7 @@
                 <mxCell id="9IPNSUywChHl0TgCMFG--0" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2EYguX7l6yDg4F3wPqCo-1">
                     <mxGeometry y="780" width="820" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="9IPNSUywChHl0TgCMFG--1" value="adres:&lt;br&gt;&lt;br&gt;lorem ipsum 99&lt;br&gt;7474 AB&lt;br&gt;Atlantis&lt;br&gt;026-123456789" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2EYguX7l6yDg4F3wPqCo-1">
+                <mxCell id="9IPNSUywChHl0TgCMFG--1" value="contact informatie:&lt;br&gt;&lt;br&gt;lorem ipsum 99&lt;br&gt;7474 AB&lt;br&gt;Atlantis&lt;br&gt;026-123456789" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2EYguX7l6yDg4F3wPqCo-1">
                     <mxGeometry x="10" y="820" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="9IPNSUywChHl0TgCMFG--2" value="openingstijden:&lt;br&gt;&lt;br&gt;&lt;br&gt;00:00-23:59" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2EYguX7l6yDg4F3wPqCo-1">
@@ -151,6 +151,27 @@
                 </mxCell>
                 <mxCell id="9IPNSUywChHl0TgCMFG--3" value="houdt contact:&lt;br&gt;&lt;br&gt;imstagram:&lt;br&gt;Facebook" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2EYguX7l6yDg4F3wPqCo-1">
                     <mxGeometry x="560" y="820" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="P80BOnUCXKKFFG-22QBh-0" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2EYguX7l6yDg4F3wPqCo-1">
+                    <mxGeometry x="20" y="140" width="800" height="630" as="geometry"/>
+                </mxCell>
+                <mxCell id="P80BOnUCXKKFFG-22QBh-1" value="foto" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2EYguX7l6yDg4F3wPqCo-1">
+                    <mxGeometry x="80" y="190" width="170" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="P80BOnUCXKKFFG-22QBh-2" value="foto" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2EYguX7l6yDg4F3wPqCo-1">
+                    <mxGeometry x="570" y="380" width="170" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="P80BOnUCXKKFFG-22QBh-3" value="foto" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2EYguX7l6yDg4F3wPqCo-1">
+                    <mxGeometry x="320" y="380" width="170" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="P80BOnUCXKKFFG-22QBh-4" value="foto" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2EYguX7l6yDg4F3wPqCo-1">
+                    <mxGeometry x="80" y="380" width="170" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="P80BOnUCXKKFFG-22QBh-5" value="foto" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2EYguX7l6yDg4F3wPqCo-1">
+                    <mxGeometry x="570" y="190" width="170" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="P80BOnUCXKKFFG-22QBh-6" value="foto" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2EYguX7l6yDg4F3wPqCo-1">
+                    <mxGeometry x="320" y="190" width="170" height="160" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
@@ -181,7 +202,7 @@
                 <mxCell id="xSbdGgkrmqo4oon8GcCw-0" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="jPh5uItxn51hymnknjkG-1">
                     <mxGeometry x="4" y="690" width="820" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="xSbdGgkrmqo4oon8GcCw-1" value="adres:&lt;br&gt;&lt;br&gt;lorem ipsum 99&lt;br&gt;7474 AB&lt;br&gt;Atlantis&lt;br&gt;026-123456789" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="jPh5uItxn51hymnknjkG-1">
+                <mxCell id="xSbdGgkrmqo4oon8GcCw-1" value="contact informatie:&lt;br&gt;&lt;br&gt;lorem ipsum 99&lt;br&gt;7474 AB&lt;br&gt;Atlantis&lt;br&gt;026-123456789" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="jPh5uItxn51hymnknjkG-1">
                     <mxGeometry x="14" y="730" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="xSbdGgkrmqo4oon8GcCw-2" value="openingstijden:&lt;br&gt;&lt;br&gt;&lt;br&gt;00:00-23:59" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="jPh5uItxn51hymnknjkG-1">
@@ -189,6 +210,15 @@
                 </mxCell>
                 <mxCell id="xSbdGgkrmqo4oon8GcCw-3" value="houdt contact:&lt;br&gt;&lt;br&gt;imstagram:&lt;br&gt;Facebook" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="jPh5uItxn51hymnknjkG-1">
                     <mxGeometry x="564" y="730" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="TCaGzFQ5SD7ZXnJ7QFPG-0" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="jPh5uItxn51hymnknjkG-1">
+                    <mxGeometry x="60" y="145" width="700" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="TCaGzFQ5SD7ZXnJ7QFPG-2" value="contact informatie:&lt;br&gt;&lt;br&gt;lorem ipsum 99&lt;br&gt;7474 AB&lt;br&gt;Atlantis&lt;br&gt;026-123456789" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="jPh5uItxn51hymnknjkG-1">
+                    <mxGeometry x="80" y="240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="TCaGzFQ5SD7ZXnJ7QFPG-3" value="google maps integratie" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="jPh5uItxn51hymnknjkG-1">
+                    <mxGeometry x="490" y="230" width="120" height="100" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
