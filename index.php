@@ -95,7 +95,7 @@
           <p>Korte “about section” zoals je design, maar net wat rijker.</p>
         </div>
 
-        <p style="color: var(--muted); margin:0;">
+        <p style="color: #a1a1aa; margin:0;">
           Wij combineren klassieke sushi met een moderne, strakke presentatie.
           Van nigiri tot warme gerechten — alles met aandacht.
         </p>
