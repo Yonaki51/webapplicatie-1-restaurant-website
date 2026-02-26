@@ -10,7 +10,7 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/index.html">
+    <a class="brand" href="/index.php">
       <span class="brand-mark">鮨</span>
       <span>
         Sushi House
@@ -19,12 +19,12 @@
     </a>
 
     <nav class="nav">
-      <a class="active" href="/index.html">home</a>
-      <a href="/menu.html">menu</a>
-      <a href="/galerie.html">galerie</a>
-      <a href="/contact.html">contact</a>
+      <a class="active" href="/index.php">home</a>
+      <a href="/menu.php">menu</a>
+      <a href="/galerie.php">galerie</a>
+      <a href="/contact.php">contact</a>
       <div class="nav-cta">
-        <a class="btn btn-ghost" href="/reserveren.html">reserveren</a>
+        <a class="btn btn-ghost" href="/reserveren.php">reserveren</a>
       </div>
     </nav>
   </div>
@@ -42,8 +42,8 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="/menu.html">Bekijk menu</a>
-          <a class="btn btn-ghost" href="/reserveren.html">Reserveer</a>
+          <a class="btn btn-primary" href="/menu.php">Bekijk menu</a>
+          <a class="btn btn-ghost" href="/reserveren.php">Reserveer</a>
         </div>
       </div>
 

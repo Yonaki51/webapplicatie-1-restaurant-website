@@ -10,17 +10,17 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/index.html">
+    <a class="brand" href="/index.php">
       <span class="brand-mark">鮨</span>
       <span>Sushi House<small>galerie</small></span>
     </a>
     <nav class="nav">
-      <a href="/index.html">home</a>
-      <a href="/menu.html">menu</a>
-      <a class="active" href="/galerie.html">galerie</a>
-      <a href="/contact.html">contact</a>
+      <a href="/index.php">home</a>
+      <a href="/menu.php">menu</a>
+      <a class="active" href="/galerie.php">galerie</a>
+      <a href="/contact.php">contact</a>
       <div class="nav-cta">
-        <a class="btn btn-ghost" href="/reserveren.html">reserveren</a>
+        <a class="btn btn-ghost" href="/reserveren.php">reserveren</a>
       </div>
     </nav>
   </div>
