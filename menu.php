@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sushi Restaurant - Menu</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/index.php">
+      <span class="brand-mark">鮨</span>
+      <span>Sushi House<small>menu</small></span>
+    </a>
+    <nav class="nav">
+      <a href="/index.php">home</a>
+      <a class="active" href="/menu.php">menu</a>
+      <a href="/galerie.php">galerie</a>
+      <a href="/contact.php">contact</a>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="/reserveren.php">reserveren</a>
+        <a class="btn btn-primary" href="/bestellen.php">bestellen</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <div class="panel">
+      <div class="menu-bar">
+        <a href="#sushi">sushi & sashimi</a>
+        <a href="#warm">warme gerechten</a>
+        <a href="#voor">voorgerechten</a>
+        <a href="#dessert">desserts</a>
+        <input type="text" placeholder="zoeken..." />
+      </div>
+
+      <div class="section-head">
+        <h2 id="sushi">Sushi & Sashimi</h2>
+        <p>Voorbeeld items — vervang later door jouw echte gerechten.</p>
+      </div>
+
+      <div class="menu-grid">
+        <div class="dish">
+          <div>
+            <h4>Salmon Nigiri (2 stuks)</h4>
+            <p>Zalm, rijst, sojasaus.</p>
+          </div>
+          <div class="price">€ 4,50</div>
+        </div>
+
+        <div class="dish">
+          <div>
+            <h4>Tuna Sashimi</h4>
+            <p>Tonijn, wasabi, gember.</p>
+          </div>
+          <div class="price">€ 8,50</div>
+        </div>
+      </div>
+
+      <div style="height:22px;"></div>
+
+      <div class="section-head">
+        <h2 id="warm">Warme gerechten</h2>
+        <p>Comfort food bij sushi.</p>
+      </div>
+
+      <div class="menu-grid">
+        <div class="dish">
+          <div>
+            <h4>Gyoza (6 stuks)</h4>
+            <p>Japanse dumplings met dip.</p>
+          </div>
+          <div class="price">€ 6,00</div>
+        </div>
+
+        <div class="dish">
+          <div>
+            <h4>Chicken Teriyaki</h4>
+            <p>Zoet-hartige teriyaki saus.</p>
+          </div>
+          <div class="price">€ 12,50</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h4>contact informatie:</h4>
+      <p>Sushi Street 99<br>1000 AB Atlantis<br>06-00000000</p>
+    </div>
+    <div class="footer-col">
+      <h4>openingstijden:</h4>
+      <p>ma-zo: 12:00 - 22:00<br>keuken sluit: 21:30</p>
+    </div>
+    <div class="footer-col">
+      <h4>houd contact:</h4>
+      <p>instagram<br>facebook</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
