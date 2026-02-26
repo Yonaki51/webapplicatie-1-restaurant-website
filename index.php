@@ -48,11 +48,7 @@
       </div>
 
       <div class="hero-media">
-        <!-- Tip: vervang dit later door een echte afbeelding -->
-        <div class="media-text">
-          Hero afbeelding / sushi foto<br>
-          (plaats bv. <b>assets/img/hero.jpg</b>)
-        </div>
+        <img src="/assets/img/hero.jpg" alt="Sushi gerecht" class="hero-img" />
       </div>
     </div>
   </section>
