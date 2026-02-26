@@ -91,7 +91,6 @@
       <div class="panel">
         <div class="section-head">
           <h2>Over ons</h2>
-          <p>Korte "about section" zoals je design, maar net wat rijker.</p>
         </div>
 
         <p style="color: #a1a1aa; margin:0;">
