@@ -1,27 +1,3 @@
-<?php
-$success = false;
-$errors  = [];
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $naam       = trim($_POST['naam']       ?? '');
-    $email      = trim($_POST['email']      ?? '');
-    $datum      = trim($_POST['datum']      ?? '');
-    $tijd       = trim($_POST['tijd']       ?? '');
-    $personen   = (int) ($_POST['personen'] ?? 0);
-    $opmerkingen = trim($_POST['opmerkingen'] ?? '');
-
-    if ($naam === '')                          $errors[] = 'Naam is verplicht.';
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Vul een geldig e-mailadres in.';
-    if ($datum === '' || strtotime($datum) < strtotime('today')) $errors[] = 'Kies een geldige datum (vandaag of later).';
-    if ($tijd < '12:00' || $tijd > '21:30')   $errors[] = 'Tijdstip moet tussen 12:00 en 21:30 liggen.';
-    if ($personen < 1 || $personen > 20)       $errors[] = 'Aantal personen moet tussen 1 en 20 zijn.';
-
-    if (empty($errors)) {
-        // TODO: save to database or send confirmation e-mail
-        $success = true;
-    }
-}
-?>
 <!doctype html>
 <html lang="nl">
 <head>
@@ -58,54 +34,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>Vul het formulier in en wij bevestigen uw reservering zo snel mogelijk.</p>
       </div>
 
-      <form class="reservation-form" method="post" action="/reserveren.php">
-        <?php if ($success): ?>
-          <div class="form-notice form-notice--success">
-            Uw reservering is ontvangen! We nemen zo snel mogelijk contact op.
-          </div>
-        <?php endif; ?>
-        <?php if (!empty($errors)): ?>
-          <div class="form-notice form-notice--error">
-            <?php foreach ($errors as $e): ?>
-              <p><?= htmlspecialchars($e) ?></p>
-            <?php endforeach; ?>
-          </div>
-        <?php endif; ?>
+      <div class="form-notice form-notice--error">
+        Online reserveren is tijdelijk niet beschikbaar. Bel ons op 06-00000000 of stuur een e-mail naar info@sushihouse.nl.
+      </div>
+
+      <form class="reservation-form" method="post" action="#">
         <div class="form-grid">
           <div class="form-group">
             <label for="naam">Naam</label>
-            <input type="text" id="naam" name="naam" placeholder="Uw naam"
-              value="<?= htmlspecialchars($_POST['naam'] ?? '') ?>" required />
+            <input type="text" id="naam" name="naam" placeholder="Uw naam" required />
           </div>
 
           <div class="form-group">
             <label for="email">E-mailadres</label>
-            <input type="email" id="email" name="email" placeholder="uw@email.nl"
-              value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required />
+            <input type="email" id="email" name="email" placeholder="uw@email.nl" required />
           </div>
 
           <div class="form-group">
             <label for="datum">Datum</label>
-            <input type="date" id="datum" name="datum"
-              value="<?= htmlspecialchars($_POST['datum'] ?? '') ?>" required />
+            <input type="date" id="datum" name="datum" required />
           </div>
 
           <div class="form-group">
             <label for="tijd">Tijdstip</label>
-            <input type="time" id="tijd" name="tijd" min="12:00" max="21:30"
-              value="<?= htmlspecialchars($_POST['tijd'] ?? '') ?>" required />
+            <input type="time" id="tijd" name="tijd" min="12:00" max="21:30" required />
           </div>
 
           <div class="form-group">
             <label for="personen">Aantal personen</label>
-            <input type="number" id="personen" name="personen" min="1" max="20" placeholder="2"
-              value="<?= htmlspecialchars($_POST['personen'] ?? '') ?>" required />
+            <input type="number" id="personen" name="personen" min="1" max="20" placeholder="2" required />
           </div>
 
           <div class="form-group form-group--full">
             <label for="opmerkingen">Opmerkingen</label>
             <textarea id="opmerkingen" name="opmerkingen" rows="4"
-              placeholder="Allergieën, speciale wensen..."><?= htmlspecialchars($_POST['opmerkingen'] ?? '') ?></textarea>
+              placeholder="Allergieën, speciale wensen..."></textarea>
           </div>
         </div>
 

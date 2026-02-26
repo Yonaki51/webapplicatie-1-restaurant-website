@@ -31,7 +31,7 @@
     <div class="panel">
       <div class="section-head">
         <h2>Galerie</h2>
-        <p>Vervang “foto” blokken later door echte afbeeldingen.</p>
+        <p>Vervang "foto" blokken later door echte afbeeldingen.</p>
       </div>
 
       <div class="gallery">

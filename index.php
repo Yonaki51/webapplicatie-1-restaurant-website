@@ -61,7 +61,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Waarom hier eten?</h2>
-        <p>Simple cards zoals je wireframe, maar “echte website” vibes.</p>
+        <p>Simple cards zoals je wireframe, maar "echte website" vibes.</p>
       </div>
 
       <div class="cards">
@@ -91,7 +91,7 @@
       <div class="panel">
         <div class="section-head">
           <h2>Over ons</h2>
-          <p>Korte “about section” zoals je design, maar net wat rijker.</p>
+          <p>Korte "about section" zoals je design, maar net wat rijker.</p>
         </div>
 
         <p style="color: #a1a1aa; margin:0;">
