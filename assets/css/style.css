@@ -182,10 +182,6 @@ a:hover { text-decoration: underline; }
   padding: 16px;
 }
 
-@media (min-width: 960px) {
-  .hero-grid { grid-template-columns: 1fr 1fr; }
-}
-
 /* Cards */
 .cards { display: grid; gap: 14px; }
 
@@ -209,10 +205,6 @@ a:hover { text-decoration: underline; }
   color: var(--gold);
   font-weight: 800;
   font-size: .85rem;
-}
-
-@media (min-width: 900px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* Panel */
@@ -261,10 +253,6 @@ a:hover { text-decoration: underline; }
 .dish p  { margin: 0; color: var(--muted); font-size: .95rem; }
 .price   { font-weight: 900; color: var(--gold); white-space: nowrap; }
 
-@media (min-width: 900px) {
-  .menu-grid { grid-template-columns: 1fr 1fr; }
-}
-
 /* Gallery */
 .gallery { display: grid; gap: 14px; }
 
@@ -278,9 +266,6 @@ a:hover { text-decoration: underline; }
   justify-content: center;
   color: var(--muted);
 }
-
-@media (min-width: 700px)  { .gallery { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 980px)  { .gallery { grid-template-columns: repeat(3, 1fr); } }
 
 /* Contact */
 .contact-grid { display: grid; gap: 18px; align-items: start; }
@@ -304,10 +289,6 @@ a:hover { text-decoration: underline; }
   color: var(--muted);
 }
 
-@media (min-width: 900px) {
-  .contact-grid { grid-template-columns: 1fr 1fr; }
-}
-
 /* Footer */
 .site-footer {
   margin-top: 40px;
@@ -319,6 +300,42 @@ a:hover { text-decoration: underline; }
 .footer-col h4 { margin: 0 0 8px; font-size: .95rem; }
 .footer-col p  { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.4; }
 
+/* ==========================================================================
+   Media Queries
+   All responsive breakpoints are collected here for easy maintenance.
+   ========================================================================== */
+
+/* Hero – switch to two-column layout on wider screens */
+@media (min-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Cards – display three cards per row on wider screens */
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Menu – display menu items in two columns on wider screens */
+@media (min-width: 900px) {
+  .menu-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Gallery – switch to two columns on medium screens */
+@media (min-width: 700px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Gallery – switch to three columns on wider screens */
+@media (min-width: 980px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Contact – display contact info and map side by side on wider screens */
+@media (min-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Footer – display footer columns in a three-column grid on wider screens */
 @media (min-width: 900px) {
   .footer-inner { grid-template-columns: repeat(3, 1fr); gap: 18px; }
 }
