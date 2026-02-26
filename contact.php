@@ -21,7 +21,6 @@
       <a class="active" href="/contact.php">contact</a>
       <div class="nav-cta">
         <a class="btn btn-ghost" href="/reserveren.php">reserveren</a>
-        <a class="btn btn-primary" href="/bestellen.php">bestellen</a>
       </div>
     </nav>
   </div>
