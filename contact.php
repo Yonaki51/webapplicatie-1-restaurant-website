@@ -38,7 +38,7 @@
       <div class="contact-grid">
         <div class="contact-box">
           <h3>contact informatie:</h3>
-          <p style="color: var(--muted); margin:0;">
+          <p style="color: #a1a1aa; margin:0;">
             Sushi Street 99<br>
             1000 AB Atlantis<br>
             06-00000000<br><br>
