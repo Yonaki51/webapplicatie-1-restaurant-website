@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Huisstijl — Stijlgids</title>
+<style>
+  :root {
+    --bg:      #0b0b0d;
+    --surface: #111114;
+    --text:    #f4f4f5;
+    --muted:   #a1a1aa;
+    --border:  #2a2a2e;
+    --accent:  #e11d48;
+    --gold:    #f59e0b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    padding: 3rem 1.5rem;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  /* ── Header ── */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+  }
+  .header-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .header h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .header p {
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  /* ── Section ── */
+  .section-title {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── Kleuren ── */
+  .colors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 1rem;
+  }
+  .color-swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+  .swatch-box {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 0.625rem;
+    border: 1px solid var(--border);
+  }
+  .swatch-name {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .swatch-hex {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .swatch-var {
+    font-size: 0.6875rem;
+    color: var(--muted);
+    opacity: 0.6;
+  }
+
+  /* ── Typografie ── */
+  .type-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    background: var(--surface);
+  }
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .type-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .type-meta {
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .type-meta span:first-child { font-size: 0.75rem; font-weight: 600; color: var(--muted); }
+  .type-meta span:last-child  { font-size: 0.6875rem; color: var(--muted); opacity: 0.6; }
+  .type-sample { color: var(--text); }
+  .ts-h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.15; }
+  .ts-h2 { font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
+  .ts-h3 { font-size: 1.375rem; font-weight: 600; line-height: 1.3; }
+  .ts-body { font-size: 1rem; color: var(--muted); }
+  .ts-small { font-size: 0.875rem; color: var(--muted); }
+  .ts-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+  /* ── Buttons ── */
+  .buttons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    align-items: center;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.8; }
+  .btn-primary   { background: var(--accent); color: #fff; }
+  .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-gold      { background: var(--gold); color: #000; }
+  .btn-ghost     { background: transparent; color: var(--muted); }
+  .btn-sm {
+    padding: 0.375rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+
+  /* ── Badges ── */
+  .badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    align-items: center;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+  }
+  .badge-accent { background: var(--accent); color: #fff; }
+  .badge-gold   { background: var(--gold); color: #000; }
+  .badge-muted  { background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
+
+  /* ── Cards ── */
+  .cards-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card-title { font-size: 0.9375rem; font-weight: 600; color: var(--text); }
+  .card-body  { font-size: 0.875rem; color: var(--muted); }
+
+  /* ── Formulier ── */
+  .form-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 480px;
+  }
+  .field { display: flex; flex-direction: column; gap: 0.375rem; }
+  label  { font-size: 0.8125rem; font-weight: 600; color: var(--text); }
+  input, textarea {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.9375rem;
+    padding: 0.625rem 0.875rem;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  input::placeholder, textarea::placeholder { color: var(--muted); }
+  input:focus, textarea:focus { border-color: var(--accent); }
+  textarea { resize: vertical; min-height: 5rem; }
+  .input-demo-focused { border-color: var(--accent); }
+
+  /* ── Dividers ── */
+  .dividers-stack { display: flex; flex-direction: column; gap: 0.75rem; }
+  hr { border: none; border-top: 1px solid var(--border); }
+
+  /* ── Footer ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-label">Stijlgids</div>
+    <h1>Huisstijl</h1>
+    <p>Een overzicht van kleuren, typografie, componenten en stijlelementen.</p>
+  </div>
+
+  <!-- Kleuren -->
+  <div>
+    <div class="section-title">Kleurenpalet</div>
+    <div class="colors-grid">
+      <div class="color-swatch">
+        <div class="swatch-box" style="background:#0b0b0d;"></div>
+        <div class="swatch-name">Background</div>
+        <div class="swatch-hex">#0b0b0d</div>
+        <div class="swatch-var">--bg</div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-box" style="background:#111114;"></div>
+        <div class="swatch-name">Surface</div>
+        <div class="swatch-hex">#111114</div>
+        <div class="swatch-var">--surface</div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-box" style="background:#f4f4f5; border-color:#3a3a3e;"></div>
+        <div class="swatch-name">Text</div>
+        <div class="swatch-hex">#f4f4f5</div>
+        <div class="swatch-var">--text</div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-box" style="background:#a1a1aa;"></div>
+        <div class="swatch-name">Muted</div>
+        <div class="swatch-hex">#a1a1aa</div>
+        <div class="swatch-var">--muted</div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-box" style="background:#2a2a2e;"></div>
+        <div class="swatch-name">Border</div>
+        <div class="swatch-hex">#2a2a2e</div>
+        <div class="swatch-var">--border</div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-box" style="background:#e11d48;"></div>
+        <div class="swatch-name">Accent</div>
+        <div class="swatch-hex">#e11d48</div>
+        <div class="swatch-var">--accent</div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-box" style="background:#f59e0b;"></div>
+        <div class="swatch-name">Gold</div>
+        <div class="swatch-hex">#f59e0b</div>
+        <div class="swatch-var">--gold</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typografie -->
+  <div>
+    <div class="section-title">Typografie — system-ui, -apple-system, sans-serif</div>
+    <div class="type-stack">
+      <div class="type-row">
+        <div class="type-meta"><span>H1</span><span>2.5rem / 700</span></div>
+        <div class="type-sample ts-h1">Heading één</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><span>H2</span><span>1.875rem / 700</span></div>
+        <div class="type-sample ts-h2">Heading twee</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><span>H3</span><span>1.375rem / 600</span></div>
+        <div class="type-sample ts-h3">Heading drie</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><span>Body</span><span>1rem / 400</span></div>
+        <div class="type-sample ts-body">Dit is een voorbeeld van bodytekst. Goed leesbaar, rustige kleur.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><span>Small</span><span>0.875rem / 400</span></div>
+        <div class="type-sample ts-small">Kleine tekst voor bijschriften en meta-informatie.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><span>Label</span><span>0.75rem / 700</span></div>
+        <div class="type-sample ts-label">Sectielabel — uppercase</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div>
+    <div class="section-title">Knoppen</div>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div class="buttons-row">
+        <button class="btn btn-primary">Primair</button>
+        <button class="btn btn-secondary">Secundair</button>
+        <button class="btn btn-gold">Gold</button>
+        <button class="btn btn-ghost">Ghost</button>
+      </div>
+      <div class="buttons-row">
+        <button class="btn btn-primary btn-sm">Klein primair</button>
+        <button class="btn btn-secondary btn-sm">Klein secundair</button>
+        <button class="btn btn-gold btn-sm">Klein gold</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Badges -->
+  <div>
+    <div class="section-title">Badges</div>
+    <div class="badges-row">
+      <span class="badge badge-accent">Accent</span>
+      <span class="badge badge-gold">Gold</span>
+      <span class="badge badge-muted">Standaard</span>
+      <span class="badge badge-muted">Nieuw</span>
+      <span class="badge badge-accent">Live</span>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div>
+    <div class="section-title">Cards</div>
+    <div class="cards-row">
+      <div class="card">
+        <div class="card-title">Standaard card</div>
+        <div class="card-body">Hover om de border te zien oplichten in accentkleur.</div>
+      </div>
+      <div class="card" style="border-color:var(--accent);">
+        <div class="card-title">Actieve card</div>
+        <div class="card-body">Border is rood — gebruik voor geselecteerde of uitgelichte items.</div>
+      </div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25rem;">
+          <div class="card-title">Met badge</div>
+          <span class="badge badge-gold">Nieuw</span>
+        </div>
+        <div class="card-body">Cards kunnen badges, knoppen of iconen bevatten.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulier -->
+  <div>
+    <div class="section-title">Formulierelementen</div>
+    <div class="form-stack">
+      <div class="field">
+        <label>Naam</label>
+        <input type="text" placeholder="Jan de Vries">
+      </div>
+      <div class="field">
+        <label>E-mailadres</label>
+        <input type="email" placeholder="jan@voorbeeld.nl" class="input-demo-focused">
+        <!-- focused state -->
+      </div>
+      <div class="field">
+        <label>Bericht</label>
+        <textarea placeholder="Schrijf hier je bericht..."></textarea>
+      </div>
+      <button class="btn btn-primary" style="align-self:flex-start;">Verstuur</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Huisstijl stijlgids — gegenereerd op basis van de opgegeven design tokens.
+  </div>
+
+</div>
+</body>
+</html>
