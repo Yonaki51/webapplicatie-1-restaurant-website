@@ -53,7 +53,9 @@ include("dbcalls/menukaart/read.php");
           <?php foreach ($result as $dish): ?>
             <div class="dish">
               <?php if ($dish['Afbeelding']): ?>
-                <img src="<?php echo htmlspecialchars($dish['Afbeelding']); ?>" alt="<?php echo htmlspecialchars($dish['Naam']); ?>">
+                <div class="dish-img">
+                  <img src="<?php echo htmlspecialchars($dish['Afbeelding']); ?>" alt="<?php echo htmlspecialchars($dish['Naam']); ?>">
+                </div>
               <?php endif; ?>
               <div class="dish-content">
                 <h4><?php echo htmlspecialchars($dish['Naam']); ?></h4>
