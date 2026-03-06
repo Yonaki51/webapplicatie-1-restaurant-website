@@ -68,7 +68,16 @@ include("dbcalls/menukaart/read.php");
         </div>
 
         <div class="dish">
-          <div>
+          <img src="/assets/img/salmon-avocado-roll.jpg" alt="Zalm avocado rol">
+          <div class="dish-content">
+            <h4>Zalm Avocado Rol</h4>
+            <p>Zalm, avocado, komkommer, rijst.</p>
+          </div>
+          <div class="price">€ 10,50</div>
+        </div>
+
+        <div class="dish">
+          <div class="dish-content">
             <h4>Tuna Sashimi</h4>
             <p>Tonijn, wasabi, gember.</p>
           </div>
