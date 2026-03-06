@@ -54,7 +54,7 @@ include("dbcalls/menukaart/read.php");
             <div class="dish">
               <?php if ($dish['Afbeelding']): ?>
                 <div class="dish-img">
-                  <img src="<?php echo htmlspecialchars($dish['Afbeelding']); ?>" alt="<?php echo htmlspecialchars($dish['Naam']); ?>">
+                  <img src="<?php echo htmlspecialchars($dish['Afbeelding']); ?>" alt="<?php echo htmlspecialchars($dish['Naam']); ?>"width=120px>
                 </div>
               <?php endif; ?>
               <div class="dish-content">
