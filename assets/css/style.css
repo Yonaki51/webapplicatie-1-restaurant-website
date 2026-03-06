@@ -312,8 +312,9 @@ a:hover {
 }
 
 .dish img {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 110px;
+  max-width: 100%;
   object-fit: cover;
   border-radius: 6px;
   flex-shrink: 0;
