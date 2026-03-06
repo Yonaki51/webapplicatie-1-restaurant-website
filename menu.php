@@ -53,7 +53,9 @@ include("dbcalls/menukaart/read.php");
           <?php foreach ($result as $dish): ?>
             <div class="dish">
               <?php if ($dish['Afbeelding']): ?>
-                <img src="<?php echo htmlspecialchars($dish['Afbeelding']); ?>" alt="<?php echo htmlspecialchars($dish['Naam']); ?>">
+                <div class="dish-img">
+                  <img src="<?php echo htmlspecialchars($dish['Afbeelding']); ?>" alt="<?php echo htmlspecialchars($dish['Naam']); ?>">
+                </div>
               <?php endif; ?>
               <div class="dish-content">
                 <h4><?php echo htmlspecialchars($dish['Naam']); ?></h4>
@@ -65,15 +67,6 @@ include("dbcalls/menukaart/read.php");
               <div class="price">€ <?php echo number_format($dish['Prijs'], 2, ',', '.'); ?></div>
             </div>
           <?php endforeach; ?>
-        </div>
-
-        <div class="dish">
-          <img src="/assets/img/salmon-avocado-roll.jpg" alt="Zalm avocado rol">
-          <div class="dish-content">
-            <h4>Zalm Avocado Rol</h4>
-            <p>Zalm, avocado, komkommer, rijst.</p>
-          </div>
-          <div class="price">€ 10,50</div>
         </div>
 
         <div class="dish">
