@@ -209,18 +209,21 @@ a:hover {
 }
 
 .hero-media {
+  position: relative;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--surface);
   min-height: 320px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
 }
 
 .hero-media .hero-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
