@@ -54,14 +54,14 @@ include("dbcalls/menukaart/read.php");
             <div class="dish">
               <?php if ($dish['Afbeelding']): ?>
                 <div class="dish-img">
-                  <img src="<?php echo htmlspecialchars($dish['Afbeelding']); ?>" alt="<?php echo htmlspecialchars($dish['Naam']); ?>">
+                  <img src="<?php echo $dish['Afbeelding']; ?>" alt="<?php echo $dish['Naam']; ?>">
                 </div>
               <?php endif; ?>
               <div class="dish-content">
-                <h4><?php echo htmlspecialchars($dish['Naam']); ?></h4>
-                <p><?php echo htmlspecialchars($dish['Beschrijving']); ?></p>
+                <h4><?php echo ($dish['Naam']); ?></h4>
+                <p><?php echo $dish['Beschrijving']; ?></p>
                 <?php if ($dish['Allergenen']): ?>
-                  <small class="allergens">Allergenen: <?php echo htmlspecialchars($dish['Allergenen']); ?></small>
+                  <small class="allergens">Allergenen: <?php echo ($dish['Allergenen']); ?></small>
                 <?php endif; ?>
               </div>
               <div class="price">€ <?php echo number_format($dish['Prijs'], 2, ',', '.'); ?></div>
