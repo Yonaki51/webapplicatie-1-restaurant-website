@@ -8,7 +8,7 @@ include("dbcalls/menukaart/read.php");
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sushi Restaurant - Menu</title>
+  <title>Genmai - Menu</title>
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 
