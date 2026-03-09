@@ -1,4 +1,6 @@
 <?php
+// menu.php – Menuoverzichtspagina
+// Laad de databaseverbinding en haal alle menukaartitems op via een prepared statement
 include("dbcalls/conn.php");
 include("dbcalls/menukaart/read.php");
 ?>
@@ -9,13 +11,17 @@ include("dbcalls/menukaart/read.php");
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Genmai - Menu</title>
+  <!-- Globale stylesheet voor de gehele website -->
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 
 <body>
 
+  <!-- ========== HEADER / NAVIGATIE ========== -->
+  <!-- Sticky navigatiebalk – 'active' geeft de huidige pagina aan -->
   <header class="site-header">
     <div class="container header-inner">
+      <!-- Logo en restaurantnaam -->
       <a class="brand" href="/index.php">
         <span class="brand-mark">鮨</span>
         <span>Sushi House<small>menu</small></span>
@@ -25,6 +31,7 @@ include("dbcalls/menukaart/read.php");
         <a class="active" href="/menu.php">menu</a>
         <a href="/galerie.php">galerie</a>
         <a href="/contact.php">contact</a>
+        <!-- Call-to-action knoppen: reserveren en bestellen -->
         <div class="nav-cta">
           <a class="btn btn-ghost" href="/reserveren.php">reserveren</a>
           <a class="btn btn-primary" href="/bestellen.php">bestellen</a>
@@ -36,22 +43,27 @@ include("dbcalls/menukaart/read.php");
   <main class="section">
     <div class="container">
       <div class="panel">
+        <!-- Snelkoppelingsbalk naar elke menucategorie + zoekfunctie -->
         <div class="menu-bar">
           <a href="#sushi">sushi & sashimi</a>
           <a href="#warm">warme gerechten</a>
           <a href="#voor">voorgerechten</a>
           <a href="#dessert">desserts</a>
+          <!-- Zoekveldje (clientside filtering nog te implementeren) -->
           <input type="text" placeholder="zoeken..." />
         </div>
 
+        <!-- ========== CATEGORIE: SUSHI & SASHIMI ========== -->
         <div class="section-head">
           <h2 id="sushi">Sushi & Sashimi</h2>
           <p>Voorbeeld items — vervang later door jouw echte gerechten.</p>
         </div>
 
+        <!-- Dynamisch gegenereerde gerechten uit de database -->
         <div class="menu-grid">
           <?php foreach ($result as $dish): ?>
             <div class="dish">
+              <!-- Toon afbeelding alleen als die is opgegeven in de database -->
               <?php if ($dish['Afbeelding']): ?>
                 <div class="dish-img">
                   <img src="<?php echo $dish['Afbeelding']; ?>" alt="<?php echo $dish['Naam']; ?>">
@@ -60,15 +72,18 @@ include("dbcalls/menukaart/read.php");
               <div class="dish-content">
                 <h4><?php echo ($dish['Naam']); ?></h4>
                 <p><?php echo $dish['Beschrijving']; ?></p>
+                <!-- Allergeneninformatie – alleen weergegeven als aanwezig -->
                 <?php if ($dish['Allergenen']): ?>
                   <small class="allergens">Allergenen: <?php echo ($dish['Allergenen']); ?></small>
                 <?php endif; ?>
               </div>
+              <!-- Prijs geformatteerd als Nederlands decimaalformaat (komma als scheidingsteken) -->
               <div class="price">€ <?php echo number_format($dish['Prijs'], 2, ',', '.'); ?></div>
             </div>
           <?php endforeach; ?>
         </div>
 
+        <!-- Statisch voorbeelditem – te vervangen door databaseinhoud -->
         <div class="dish">
           <div class="dish-content">
             <h4>Tuna Sashimi</h4>
@@ -80,11 +95,13 @@ include("dbcalls/menukaart/read.php");
 
       <div style="height:22px;"></div>
 
+      <!-- ========== CATEGORIE: WARME GERECHTEN ========== -->
       <div class="section-head">
         <h2 id="warm">Warme gerechten</h2>
         <p>Comfort food bij sushi.</p>
       </div>
 
+      <!-- Statische voorbeelditems voor warme gerechten -->
       <div class="menu-grid">
         <div class="dish">
           <div>
@@ -106,16 +123,21 @@ include("dbcalls/menukaart/read.php");
     </div>
   </main>
 
+  <!-- ========== FOOTER ========== -->
+  <!-- Voettekst met contactgegevens, openingstijden en social media links -->
   <footer class="site-footer">
     <div class="container footer-inner">
+      <!-- Kolom 1: adres en telefoonnummer -->
       <div class="footer-col">
         <h4>contact informatie:</h4>
         <p>Sushi Street 99<br>1000 AB Atlantis<br>06-00000000</p>
       </div>
+      <!-- Kolom 2: openingstijden -->
       <div class="footer-col">
         <h4>openingstijden:</h4>
         <p>ma-zo: 12:00 - 22:00<br>keuken sluit: 21:30</p>
       </div>
+      <!-- Kolom 3: social media -->
       <div class="footer-col">
         <h4>houd contact:</h4>
         <p>instagram<br>facebook</p>

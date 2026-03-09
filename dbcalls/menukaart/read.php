@@ -1,13 +1,16 @@
 <?php
+// read.php – Haalt alle gerechten op uit de 'menukaart'-tabel.
+// Vereist: $conn (PDO-object) via dbcalls/conn.php.
+// Resultaat: $result – array met alle rijen uit de menukaart.
 
-// variabel met een SQL querry
+// SQL-query om alle rijen op te halen uit de menukaart-tabel
 $sql = "SELECT * FROM menukaart";
 
-// preparestatement
+// Prepared statement voorkomt SQL-injectie
 $stmt = $conn->prepare($sql);
 
-// execute on db
+// Voer de query uit op de database
 $stmt->execute();
 
-// ophalen van data
+// Haal alle rijen op als associatief array
 $result = $stmt->fetchAll();
