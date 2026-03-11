@@ -23,7 +23,7 @@
 			<a href="/public/menu.php">menu</a>
 			<a href="/public/galerie.php">galerie</a>
 			<a href="/public/contact.php">contact</a>
-			<a class="active" href="/public/admin.php">admin</a>
+			<a class="active" href="/private/admin.php">admin</a>
 			<div class="nav-cta">
 				<a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
 			</div>
@@ -48,7 +48,7 @@
 					<h3>Menukaart beheren</h3>
 					<p>Voeg gerechten toe of werk bestaande items bij.</p>
 					<div class="hero-actions">
-						<a class="btn btn-ghost" href="/public/beheer-menu.php">beheer menu</a>
+						<a class="btn btn-ghost" href="/private/beheer-menu.php">beheer menu</a>
 						<a class="btn btn-primary" href="/public/menu.php">Bekijk menu</a>
 					</div>
 				</article>
