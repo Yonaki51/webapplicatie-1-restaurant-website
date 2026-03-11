@@ -39,7 +39,7 @@
 			</div>
 
 			<!-- Aanmaakformulier -->
-			<form action="/private/menu-aanmaken.php" method="POST">
+			<form action="/dbcalls/menukaart/create.php" method="POST">
 				<div class="form-grid">
 					<div class="form-group">
 						<label>Naam <span style="color:var(--accent)">*</span></label>
