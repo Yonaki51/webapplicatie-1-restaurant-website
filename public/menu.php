@@ -3,6 +3,12 @@
 // Laad de databaseverbinding en haal alle menukaartitems op via een prepared statement
 include("../dbcalls/conn.php");
 include("../dbcalls/menukaart/read.php");
+
+// Groepeer gerechten per categorie zodat ze per sectie getoond worden
+$per_categorie = [];
+foreach ($result as $dish) {
+  $per_categorie[$dish['categorie']][] = $dish;
+}
 ?>
 <!doctype html>
 <html lang="nl">
@@ -40,86 +46,46 @@ include("../dbcalls/menukaart/read.php");
     </div>
   </header>
 
+  <!-- ========== HOOFDINHOUD ========== -->
   <main class="section">
     <div class="container">
       <div class="panel">
-        <!-- Snelkoppelingsbalk naar elke menucategorie + zoekfunctie -->
-        <div class="menu-bar">
-          <a href="#sushi">sushi & sashimi</a>
-          <a href="#warm">warme gerechten</a>
-          <a href="#voor">voorgerechten</a>
-          <a href="#dessert">desserts</a>
-          <!-- Zoekveldje (clientside filtering nog te implementeren) -->
-          <input type="text" placeholder="zoeken..." />
-        </div>
+        <?php
+        // Loop door elke categorie en toon de bijbehorende gerechten
+        foreach ($per_categorie as $categorie => $dishes):
+          ?>
+          <!-- ========== CATEGORIE: <?php echo strtoupper($categorie); ?> ========== -->
+          <div class="section-head" style="margin-top: 28px;">
+            <h2><?php echo $categorie; ?></h2>
+          </div>
 
-        <!-- ========== CATEGORIE: SUSHI & SASHIMI ========== -->
-        <div class="section-head">
-          <h2 id="sushi">Sushi & Sashimi</h2>
-          <p>Voorbeeld items — vervang later door jouw echte gerechten.</p>
-        </div>
-
-        <!-- Dynamisch gegenereerde gerechten uit de database -->
-        <div class="menu-grid">
-          <?php foreach ($result as $dish): ?>
-            <div class="dish">
-              <!-- Toon afbeelding alleen als die is opgegeven in de database -->
-              <?php if ($dish['Afbeelding']): ?>
-                <div class="dish-img">
-                  <img src="<?php echo $dish['Afbeelding']; ?>" alt="<?php echo $dish['Naam']; ?>">
-                </div>
-              <?php endif; ?>
-              <div class="dish-content">
-                <h4><?php echo ($dish['Naam']); ?></h4>
-                <p><?php echo $dish['Beschrijving']; ?></p>
-                <!-- Allergeneninformatie – alleen weergegeven als aanwezig -->
-                <?php if ($dish['Allergenen']): ?>
-                  <small class="allergens">Allergenen: <?php echo ($dish['Allergenen']); ?></small>
+          <!-- Dynamisch gegenereerde gerechten uit de database -->
+          <div class="menu-grid">
+            <?php foreach ($dishes as $dish): ?>
+              <div class="dish">
+                <!-- Toon afbeelding alleen als die is opgegeven in de database -->
+                <?php if ($dish['Afbeelding']): ?>
+                  <div class="dish-img">
+                    <img src="<?php echo $dish['Afbeelding']; ?>" alt="<?php echo $dish['Naam']; ?>">
+                  </div>
                 <?php endif; ?>
+                <div class="dish-content">
+                  <h4><?php echo $dish['Naam']; ?></h4>
+                  <p><?php echo $dish['Beschrijving']; ?></p>
+                  <!-- Allergeneninformatie – alleen weergegeven als aanwezig -->
+                  <?php if ($dish['Allergenen']): ?>
+                    <small class="allergens">Allergenen: <?php echo $dish['Allergenen']; ?></small>
+                  <?php endif; ?>
+                </div>
+                <!-- Prijs geformatteerd als Nederlands decimaalformaat (komma als scheidingsteken) -->
+                <div class="price">€ <?php echo number_format($dish['Prijs'], 2, ',', '.'); ?></div>
               </div>
-              <!-- Prijs geformatteerd als Nederlands decimaalformaat (komma als scheidingsteken) -->
-              <div class="price">€ <?php echo number_format($dish['Prijs'], 2, ',', '.'); ?></div>
-            </div>
-          <?php endforeach; ?>
-        </div>
-
-        <!-- Statisch voorbeelditem – te vervangen door databaseinhoud -->
-        <div class="dish">
-          <div class="dish-content">
-            <h4>Tuna Sashimi</h4>
-            <p>Tonijn, wasabi, gember.</p>
+            <?php endforeach; ?>
           </div>
-          <div class="price">€ 8,50</div>
-        </div>
+
+        <?php endforeach; ?>
+
       </div>
-
-      <div style="height:22px;"></div>
-
-      <!-- ========== CATEGORIE: WARME GERECHTEN ========== -->
-      <div class="section-head">
-        <h2 id="warm">Warme gerechten</h2>
-        <p>Comfort food bij sushi.</p>
-      </div>
-
-      <!-- Statische voorbeelditems voor warme gerechten -->
-      <div class="menu-grid">
-        <div class="dish">
-          <div>
-            <h4>Gyoza (6 stuks)</h4>
-            <p>Japanse dumplings met dip.</p>
-          </div>
-          <div class="price">€ 6,00</div>
-        </div>
-
-        <div class="dish">
-          <div>
-            <h4>Chicken Teriyaki</h4>
-            <p>Zoet-hartige teriyaki saus.</p>
-          </div>
-          <div class="price">€ 12,50</div>
-        </div>
-      </div>
-    </div>
     </div>
   </main>
 
