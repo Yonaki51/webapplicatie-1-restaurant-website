@@ -3,4 +3,18 @@
 // Vereist: $conn (PDO-object) via dbcalls/conn.php.
 // Verwacht POST-parameter: id.
 
-// TODO: implementeer het verwijderen van een menukaart-item
+$deleteId      = (int)($_POST['id'] ?? 0);
+$deleteError   = null;
+$deleteSuccess = false;
+
+if ($deleteId <= 0) {
+    $deleteError = 'Selecteer een geldig gerecht om te verwijderen.';
+} else {
+    $sql  = "DELETE FROM menukaart WHERE id = :id";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([':id' => $deleteId]);
+    $deleteSuccess = $stmt->rowCount() > 0;
+    if (!$deleteSuccess) {
+        $deleteError = 'Gerecht niet gevonden.';
+    }
+}
