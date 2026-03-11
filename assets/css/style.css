@@ -462,7 +462,8 @@ a:hover {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   padding: .65rem .75rem;
   border-radius: 8px;
   border: 1px solid var(--border);
@@ -473,7 +474,8 @@ a:hover {
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
   outline: none;
   border-color: var(--accent);
 }
