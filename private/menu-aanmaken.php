@@ -39,30 +39,30 @@
 			</div>
 
 			<!-- Aanmaakformulier -->
-			<form method="POST" action="/private/menu-aanmaken.php">
+			<form action="/private/menu-aanmaken.php" method="POST">
 				<div class="form-grid">
 					<div class="form-group">
-						<label for="naam">Naam <span style="color:var(--accent)">*</span></label>
+						<label>Naam <span style="color:var(--accent)">*</span></label>
 						<input type="text" id="naam" name="naam" required />
 					</div>
 
 					<div class="form-group">
-						<label for="prijs">Prijs (€) <span style="color:var(--accent)">*</span></label>
+						<label>Prijs (€) <span style="color:var(--accent)">*</span></label>
 						<input type="number" id="prijs" name="prijs" step="0.01" min="0" required />
 					</div>
 
 					<div class="form-group form-group--full">
-						<label for="beschrijving">Beschrijving <span style="color:var(--accent)">*</span></label>
+						<label>Beschrijving <span style="color:var(--accent)">*</span></label>
 						<textarea id="beschrijving" name="beschrijving" rows="3" required></textarea>
 					</div>
 
 					<div class="form-group">
-						<label for="allergenen">Allergenen</label>
+						<label>Allergenen</label>
 						<input type="text" id="allergenen" name="allergenen" placeholder="bijv. gluten, vis" />
 					</div>
 
 					<div class="form-group">
-						<label for="afbeelding">Afbeelding (URL)</label>
+						<label>Afbeelding (URL)</label>
 						<input type="text" id="afbeelding" name="afbeelding" placeholder="bijv. /assets/img/gerecht.jpg" />
 					</div>
 				</div>
