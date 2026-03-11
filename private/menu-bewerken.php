@@ -21,7 +21,7 @@
 			<a href="/public/menu.php">menu</a>
 			<a href="/public/galerie.php">galerie</a>
 			<a href="/public/contact.php">contact</a>
-			<a class="active" href="/public/admin.php">admin</a>
+			<a class="active" href="/private/admin.php">admin</a>
 			<div class="nav-cta">
 				<a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
 			</div>
@@ -73,7 +73,7 @@
 				<div class="section-head">
 					<h3 style="margin:0 0 6px;">Gerecht aanpassen</h3>
 				</div>
-				<form method="POST" action="/public/menu-bewerken.php">
+				<form method="POST" action="/private/menu-bewerken.php">
 					<input type="hidden" name="id" value="" />
 					<div class="form-grid">
 						<div class="form-group">
@@ -104,13 +104,13 @@
 
 					<div class="form-actions hero-actions">
 						<button type="submit" class="btn btn-primary">Wijzigingen opslaan</button>
-						<a class="btn btn-ghost" href="/public/beheer-menu.php">Annuleren</a>
+						<a class="btn btn-ghost" href="/private/beheer-menu.php">Annuleren</a>
 					</div>
 				</form>
 			</div>
 
 			<div class="hero-actions" style="margin-top:24px;">
-				<a class="btn btn-ghost" href="/public/beheer-menu.php">← Terug naar beheer menu</a>
+				<a class="btn btn-ghost" href="/private/beheer-menu.php">← Terug naar beheer menu</a>
 			</div>
 		</div>
 	</div>

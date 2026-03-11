@@ -21,7 +21,7 @@
 			<a href="/public/menu.php">menu</a>
 			<a href="/public/galerie.php">galerie</a>
 			<a href="/public/contact.php">contact</a>
-			<a class="active" href="/public/admin.php">admin</a>
+			<a class="active" href="/private/admin.php">admin</a>
 			<div class="nav-cta">
 				<a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
 			</div>
@@ -39,7 +39,7 @@
 			</div>
 
 			<!-- Aanmaakformulier -->
-			<form method="POST" action="/public/menu-aanmaken.php">
+			<form method="POST" action="/private/menu-aanmaken.php">
 				<div class="form-grid">
 					<div class="form-group">
 						<label for="naam">Naam <span style="color:var(--accent)">*</span></label>
@@ -69,7 +69,7 @@
 
 				<div class="form-actions hero-actions">
 					<button type="submit" class="btn btn-primary">Gerecht opslaan</button>
-					<a class="btn btn-ghost" href="/public/beheer-menu.php">Annuleren</a>
+					<a class="btn btn-ghost" href="/private/beheer-menu.php">Annuleren</a>
 				</div>
 			</form>
 		</div>
