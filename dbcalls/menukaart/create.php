@@ -5,7 +5,7 @@ $naam = $_POST['naam'];
 $categorie = $_POST['categorie'];
 $beschrijving = $_POST['beschrijving'];
 $allergenen = $_POST['allergenen'];
-$afbeelding = $_POST['afbeelding'];
+$afbeelding = '/assets/img/' . $_POST['afbeelding'];
 $prijs = $_POST['prijs'];
 
 // variabel met een SQL querry
