@@ -1,27 +1,4 @@
-<?php
-// menu-verwijderen.php – Bevestigingspagina voor het verwijderen van een gerecht.
-include("../dbcalls/conn.php");
-include("../dbcalls/menukaart/read.php");
-
-// Verwerk de verwijdering alleen bij een POST-verzoek
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    include("../dbcalls/menukaart/delete.php");
-    // Herlaad de gerechtenlijst na de verwijdering
-    include("../dbcalls/menukaart/read.php");
-}
-
-// Laad het geselecteerde gerecht voor de bevestiging
-$selectedId   = (int)($_GET['id'] ?? 0);
-$selectedDish = null;
-if ($selectedId > 0) {
-    foreach ($result as $dish) {
-        if ((int)$dish['id'] === $selectedId) {
-            $selectedDish = $dish;
-            break;
-        }
-    }
-}
-?>
+<!-- menu-verwijderen.php – Bevestigingspagina voor het verwijderen van een gerecht. -->
 <!doctype html>
 <html lang="nl">
 <head>
@@ -61,56 +38,50 @@ if ($selectedId > 0) {
 				<p>Selecteer een gerecht uit de lijst en bevestig de verwijdering.</p>
 			</div>
 
-			<!-- Terugkoppeling na verwerking -->
-			<?php if (!empty($deleteSuccess)): ?>
-				<div class="form-notice form-notice--success">
-					<p>Het gerecht is succesvol verwijderd uit de menukaart.</p>
-				</div>
-			<?php elseif (!empty($deleteError)): ?>
-				<div class="form-notice form-notice--error">
-					<p><?php echo htmlspecialchars($deleteError); ?></p>
-				</div>
-			<?php endif; ?>
-
-			<!-- Gerechtenlijst om een gerecht te selecteren voor verwijdering -->
+			<!-- Gerechtenlijst – voorbeeld items (vervang later door database-inhoud) -->
 			<div class="section-head" style="margin-top:18px;">
 				<h3 style="margin:0 0 6px;">Kies een gerecht om te verwijderen</h3>
 			</div>
 			<div class="menu-grid">
-				<?php foreach ($result as $dish): ?>
-					<a href="/public/menu-verwijderen.php?id=<?php echo (int)$dish['id']; ?>"
-					   style="text-decoration:none;">
-						<div class="dish <?php echo ((int)$dish['id'] === $selectedId) ? 'dish--selected' : ''; ?>"
-						     style="<?php echo ((int)$dish['id'] === $selectedId) ? 'border-color:var(--accent);' : ''; ?>">
-							<div class="dish-content">
-								<h4><?php echo htmlspecialchars($dish['Naam']); ?></h4>
-								<p><?php echo htmlspecialchars($dish['Beschrijving']); ?></p>
-							</div>
-							<div class="price">€ <?php echo number_format($dish['Prijs'], 2, ',', '.'); ?></div>
-						</div>
-					</a>
-				<?php endforeach; ?>
-				<?php if (empty($result)): ?>
-					<p style="color:var(--muted)">Er zijn geen gerechten in de menukaart.</p>
-				<?php endif; ?>
+				<div class="dish">
+					<div class="dish-content">
+						<h4>Zalm Nigiri</h4>
+						<p>Rijst met verse zalm.</p>
+					</div>
+					<div class="price">€ 4,50</div>
+				</div>
+
+				<div class="dish">
+					<div class="dish-content">
+						<h4>Tuna Sashimi</h4>
+						<p>Tonijn, wasabi, gember.</p>
+					</div>
+					<div class="price">€ 8,50</div>
+				</div>
+
+				<div class="dish">
+					<div class="dish-content">
+						<h4>Gyoza (6 stuks)</h4>
+						<p>Japanse dumplings met dip.</p>
+					</div>
+					<div class="price">€ 6,00</div>
+				</div>
 			</div>
 
-			<!-- Bevestigingsformulier – zichtbaar wanneer een gerecht is geselecteerd -->
-			<?php if ($selectedDish): ?>
-				<div style="margin-top:28px;">
-					<div class="card" style="border-color:var(--accent);">
-						<h3 style="margin:0 0 8px;">Verwijderen bevestigen</h3>
-						<p>Weet je zeker dat je <strong><?php echo htmlspecialchars($selectedDish['Naam']); ?></strong> wilt verwijderen? Dit kan niet ongedaan worden gemaakt.</p>
-						<form method="POST" action="/public/menu-verwijderen.php">
-							<input type="hidden" name="id" value="<?php echo (int)$selectedDish['id']; ?>" />
-							<div class="hero-actions">
-								<button type="submit" class="btn btn-primary">Ja, verwijder dit gerecht</button>
-								<a class="btn btn-ghost" href="/public/menu-verwijderen.php">Annuleren</a>
-							</div>
-						</form>
-					</div>
+			<!-- Bevestigingsformulier -->
+			<div style="margin-top:28px;">
+				<div class="card" style="border-color:var(--accent);">
+					<h3 style="margin:0 0 8px;">Verwijderen bevestigen</h3>
+					<p>Weet je zeker dat je het geselecteerde gerecht wilt verwijderen? Dit kan niet ongedaan worden gemaakt.</p>
+					<form method="POST" action="/public/menu-verwijderen.php">
+						<input type="hidden" name="id" value="" />
+						<div class="hero-actions">
+							<button type="submit" class="btn btn-primary">Ja, verwijder dit gerecht</button>
+							<a class="btn btn-ghost" href="/public/menu-verwijderen.php">Annuleren</a>
+						</div>
+					</form>
 				</div>
-			<?php endif; ?>
+			</div>
 
 			<div class="hero-actions" style="margin-top:24px;">
 				<a class="btn btn-ghost" href="/public/beheer-menu.php">← Terug naar beheer menu</a>

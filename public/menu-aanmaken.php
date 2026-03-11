@@ -1,12 +1,4 @@
-<?php
-// menu-aanmaken.php – Formulier om een nieuw gerecht toe te voegen aan de menukaart.
-include("../dbcalls/conn.php");
-
-// Verwerk het formulier alleen bij een POST-verzoek
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    include("../dbcalls/menukaart/create.php");
-}
-?>
+<!-- menu-aanmaken.php – Formulier om een nieuw gerecht toe te voegen aan de menukaart. -->
 <!doctype html>
 <html lang="nl">
 <head>
@@ -46,47 +38,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				<p>Vul de onderstaande gegevens in om een nieuw gerecht aan de menukaart toe te voegen.</p>
 			</div>
 
-			<!-- Terugkoppeling na verwerking -->
-			<?php if (!empty($createSuccess)): ?>
-				<div class="form-notice form-notice--success">
-					<p>Het gerecht is succesvol toegevoegd aan de menukaart.</p>
-				</div>
-			<?php elseif (!empty($createError)): ?>
-				<div class="form-notice form-notice--error">
-					<p><?php echo htmlspecialchars($createError); ?></p>
-				</div>
-			<?php endif; ?>
-
 			<!-- Aanmaakformulier -->
 			<form method="POST" action="/public/menu-aanmaken.php">
 				<div class="form-grid">
 					<div class="form-group">
 						<label for="naam">Naam <span style="color:var(--accent)">*</span></label>
-						<input type="text" id="naam" name="naam" required
-							value="<?php echo htmlspecialchars($_POST['naam'] ?? ''); ?>" />
+						<input type="text" id="naam" name="naam" required />
 					</div>
 
 					<div class="form-group">
 						<label for="prijs">Prijs (€) <span style="color:var(--accent)">*</span></label>
-						<input type="number" id="prijs" name="prijs" step="0.01" min="0" required
-							value="<?php echo htmlspecialchars($_POST['prijs'] ?? ''); ?>" />
+						<input type="number" id="prijs" name="prijs" step="0.01" min="0" required />
 					</div>
 
 					<div class="form-group form-group--full">
 						<label for="beschrijving">Beschrijving <span style="color:var(--accent)">*</span></label>
-						<textarea id="beschrijving" name="beschrijving" rows="3" required><?php echo htmlspecialchars($_POST['beschrijving'] ?? ''); ?></textarea>
+						<textarea id="beschrijving" name="beschrijving" rows="3" required></textarea>
 					</div>
 
 					<div class="form-group">
 						<label for="allergenen">Allergenen</label>
-						<input type="text" id="allergenen" name="allergenen" placeholder="bijv. gluten, vis"
-							value="<?php echo htmlspecialchars($_POST['allergenen'] ?? ''); ?>" />
+						<input type="text" id="allergenen" name="allergenen" placeholder="bijv. gluten, vis" />
 					</div>
 
 					<div class="form-group">
 						<label for="afbeelding">Afbeelding (URL)</label>
-						<input type="text" id="afbeelding" name="afbeelding" placeholder="bijv. /assets/img/gerecht.jpg"
-							value="<?php echo htmlspecialchars($_POST['afbeelding'] ?? ''); ?>" />
+						<input type="text" id="afbeelding" name="afbeelding" placeholder="bijv. /assets/img/gerecht.jpg" />
 					</div>
 				</div>
 
