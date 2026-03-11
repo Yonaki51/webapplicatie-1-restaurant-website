@@ -1,17 +1,16 @@
-<!-- admin.php – Adminpagina in dezelfde stijl als de rest van de site -->
+<!-- beheer-menu.php – CRUD-keuze pagina voor de menukaart -->
 <!doctype html>
 <html lang="nl">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Genmai - Admin</title>
+	<title>Genmai - Beheer Menu</title>
 	<!-- Globale stylesheet voor de gehele website -->
 	<link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
 
 <!-- ========== HEADER / NAVIGATIE ========== -->
-<!-- Sticky navigatiebalk met directe links naar alle hoofdpagina's -->
 <header class="site-header">
 	<div class="container header-inner">
 		<a class="brand" href="/public/index.php">
@@ -32,66 +31,68 @@
 </header>
 
 <!-- ========== HOOFDINHOUD ========== -->
-<!-- Dashboard met kaarten voor menu-, reserverings- en contentbeheer -->
+<!-- Drie kaarten voor de CRUD-bewerkingen op de menukaart -->
 <main class="section">
 	<div class="container">
 		<div class="panel">
 			<div class="section-head">
-				<h2>Admin dashboard</h2>
-				<p>Beheer hier onderdelen van de website en inhoud van het menu.</p>
+				<h2>Menukaart beheren</h2>
+				<p>Kies een bewerking: voeg een gerecht toe, wijzig een bestaand gerecht of verwijder een gerecht.</p>
 			</div>
 
-			<!-- Beheerkaarten met snelle actieknoppen -->
+			<!-- CRUD-kaarten -->
 			<div class="cards">
+				<!-- Aanmaken -->
 				<article class="card">
-					<div class="chip">Menu</div>
-					<h3>Menukaart beheren</h3>
-					<p>Voeg gerechten toe of werk bestaande items bij.</p>
+					<div class="chip">Aanmaken</div>
+					<h3>Gerecht toevoegen</h3>
+					<p>Voeg een nieuw gerecht toe aan de menukaart.</p>
 					<div class="hero-actions">
-						<a class="btn btn-ghost" href="/public/beheer-menu.php">beheer menu</a>
-						<a class="btn btn-primary" href="/public/menu.php">Bekijk menu</a>
+						<a class="btn btn-primary" href="/public/menu-aanmaken.php">Gerecht aanmaken</a>
 					</div>
 				</article>
 
+				<!-- Bewerken -->
 				<article class="card">
-					<div class="chip">Reserveringen</div>
-					<h3>Reserveringen</h3>
-					<p>Controleer reserveringsaanvragen en plan de tafels.</p>
+					<div class="chip">Bewerken</div>
+					<h3>Gerecht bewerken</h3>
+					<p>Wijzig de naam, beschrijving, prijs of allergenen van een bestaand gerecht.</p>
 					<div class="hero-actions">
-						<a class="btn btn-ghost" href="/public/reserveren.php">Naar reserveren</a>
+						<a class="btn btn-ghost" href="/public/menu-bewerken.php">Gerecht bewerken</a>
 					</div>
 				</article>
 
+				<!-- Verwijderen -->
 				<article class="card">
-					<div class="chip">Content</div>
-					<h3>Paginacontent</h3>
-					<p>Loop door pagina's om teksten en afbeeldingen te controleren.</p>
+					<div class="chip">Verwijderen</div>
+					<h3>Gerecht verwijderen</h3>
+					<p>Verwijder een gerecht definitief uit de menukaart.</p>
 					<div class="hero-actions">
-						<a class="btn btn-ghost" href="/public/galerie.php">Galerie</a>
-						<a class="btn btn-ghost" href="/public/contact.php">Contact</a>
+						<a class="btn btn-ghost" href="/public/menu-verwijderen.php">Gerecht verwijderen</a>
 					</div>
 				</article>
+			</div>
+
+			<div class="hero-actions" style="margin-top:24px;">
+				<a class="btn btn-ghost" href="/public/admin.php">← Terug naar dashboard</a>
+				<a class="btn btn-ghost" href="/public/menu.php">Bekijk menu</a>
 			</div>
 		</div>
 	</div>
 </main>
 
 <!-- ========== FOOTER ========== -->
-<!-- Voettekst met contactgegevens, openingstijden en social media links -->
 <footer class="site-footer">
 	<div class="container footer-inner">
 		<div class="footer-col">
-			<!-- Kolom 1: adres en telefoonnummer -->
 			<h4>contact informatie:</h4>
 			<p>Sushi Street 99<br>1000 AB Atlantis<br>06-00000000</p>
 		</div>
 		<div class="footer-col">
-			<!-- Kolom 2: openingstijden -->
 			<h4>openingstijden:</h4>
 			<p>ma-zo: 12:00 - 22:00<br>keuken sluit: 21:30</p>
 		</div>
 		<div class="footer-col">
-			<!-- Kolom 3: social media -->
 			<h4>houd contact:</h4>
 			<p>instagram<br>facebook</p>
 		</div>
