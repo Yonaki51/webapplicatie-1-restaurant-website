@@ -47,6 +47,15 @@
 					</div>
 
 					<div class="form-group">
+						<label>Categorie <span style="color:var(--accent)">*</span></label>
+					<select id="categorie" name="categorie" required>
+						<option value="">-- Kies een categorie --</option>
+						<option value="Voorgerecht">Voorgerecht</option>
+						<option value="Sushi rolls">Sushi rolls</option>
+						<option value="Nigiri & Sashimi">Nigiri & Sashimi</option>
+						<option value="Ramen & Soepen">Ramen & Soepen</option>
+					</select>
+					<div class="form-group">
 						<label>Prijs (€) <span style="color:var(--accent)">*</span></label>
 						<input type="number" id="prijs" name="prijs" step="0.01" min="0" required />
 					</div>
