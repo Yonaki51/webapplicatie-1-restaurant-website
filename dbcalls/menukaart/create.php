@@ -1,18 +1,26 @@
 <?php
 include("../conn.php");
 
-$voornaam = $_POST['voornaam'];
-$achternaam = $_POST['achternaam'];
+$naam = $_POST['naam'];
+$categorie = $_POST['categorie'];
+$beschrijving = $_POST['beschrijving'];
+$allergenen = $_POST['allergenen'];
+$afbeelding = $_POST['afbeelding'];
+$prijs = $_POST['prijs'];
 
 // variabel met een SQL querry
-$sql = "INSERT INTO `personeel`(`voornaam`, `achternaam`) VALUES (:voornaam, :achternaam)";
+$sql = "INSERT INTO `menukaart`(`Naam`, `categorie`, `Beschrijving`, `Allergenen`, `Afbeelding`, `Prijs`) VALUES (:naam, :categorie, :beschrijving, :allergenen, :afbeelding, :prijs)";
 
 // preparestatement
 $stmt = $conn->prepare($sql);
 
 // binden van variabel
-$stmt->bindParam( ":voornaam", $voornaam );
-$stmt->bindParam(':achternaam', $achternaam);
+$stmt->bindParam(':naam', $naam);
+$stmt->bindParam(':categorie', $categorie);
+$stmt->bindParam(':beschrijving', $beschrijving);
+$stmt->bindParam(':allergenen', $allergenen);
+$stmt->bindParam(':afbeelding', $afbeelding);
+$stmt->bindParam(':prijs', $prijs);
 
 // execute on db
 $stmt->execute();
