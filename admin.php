@@ -42,6 +42,7 @@
 					<h3>Menukaart beheren</h3>
 					<p>Voeg gerechten toe of werk bestaande items bij.</p>
 					<div class="hero-actions">
+						<a class="btn btn-ghost" href="/menu.php">beheer menu</a>
 						<a class="btn btn-primary" href="/menu.php">Bekijk menu</a>
 					</div>
 				</article>
