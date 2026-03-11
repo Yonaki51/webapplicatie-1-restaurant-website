@@ -1,10 +1,10 @@
-<!-- galerie.php – Fotogalerie van het restaurant -->
+<!-- contact.php – Contactpagina met adresgegevens en Google Maps-placeholder -->
 <!doctype html>
 <html lang="nl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Genmai - Galerie</title>
+  <title>Genmai - Contact</title>
   <!-- Globale stylesheet voor de gehele website -->
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
@@ -15,17 +15,17 @@
 <header class="site-header">
   <div class="container header-inner">
     <!-- Logo en restaurantnaam -->
-    <a class="brand" href="/index.php">
+    <a class="brand" href="/public/index.php">
       <span class="brand-mark">鮨</span>
-      <span>Sushi House<small>galerie</small></span>
+      <span>Sushi House<small>contact</small></span>
     </a>
     <nav class="nav">
-      <a href="/index.php">home</a>
-      <a href="/menu.php">menu</a>
-      <a class="active" href="/galerie.php">galerie</a>
-      <a href="/contact.php">contact</a>
+      <a href="/public/index.php">home</a>
+      <a href="/public/menu.php">menu</a>
+      <a href="/public/galerie.php">galerie</a>
+      <a class="active" href="/public/contact.php">contact</a>
       <div class="nav-cta">
-        <a class="btn btn-ghost" href="/reserveren.php">reserveren</a>
+        <a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
       </div>
     </nav>
   </div>
@@ -36,19 +36,28 @@
   <div class="container">
     <div class="panel">
       <div class="section-head">
-        <h2>Galerie</h2>
-        <p>Vervang "foto" blokken later door echte afbeeldingen.</p>
+        <h2>Contact</h2>
+        <p>Hier kun je later een echte Google Maps embed in zetten.</p>
       </div>
 
-      <!-- Fotoraster – responsief: 1 kolom → 2 kolommen → 3 kolommen -->
-      <!-- Vervang elk .photo-blok door een <img>-tag met een echte afbeelding -->
-      <div class="gallery">
-        <div class="photo">foto</div>
-        <div class="photo">foto</div>
-        <div class="photo">foto</div>
-        <div class="photo">foto</div>
-        <div class="photo">foto</div>
-        <div class="photo">foto</div>
+      <!-- Twee-kolomsraster: contactgegevens links, kaart rechts -->
+      <div class="contact-grid">
+        <!-- Adres en contactgegevens van het restaurant -->
+        <div class="contact-box">
+          <h3>contact informatie:</h3>
+          <p style="color: #a1a1aa; margin:0;">
+            Sushi Street 99<br>
+            1000 AB Atlantis<br>
+            06-00000000<br><br>
+            info@sushihouse.nl
+          </p>
+        </div>
+
+        <!-- Kaartblok – vervang de placeholder door een Google Maps iframe -->
+        <div class="map">
+          <!-- Vervang dit door een echte Google Maps iframe -->
+          <div class="map-placeholder">google maps integratie</div>
+        </div>
       </div>
     </div>
   </div>
