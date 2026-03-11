@@ -15,7 +15,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <!-- Logo en restaurantnaam -->
-    <a class="brand" href="/index.php">
+    <a class="brand" href="/public/index.php">
       <span class="brand-mark">鮨</span>
       <span>
         Sushi House
@@ -25,13 +25,13 @@
 
     <!-- Hoofdnavigatie – 'active' klasse geeft de huidige pagina aan -->
     <nav class="nav">
-      <a class="active" href="/index.php">home</a>
-      <a href="/menu.php">menu</a>
-      <a href="/galerie.php">galerie</a>
-      <a href="/contact.php">contact</a>
+      <a class="active" href="/public/index.php">home</a>
+      <a href="/public/menu.php">menu</a>
+      <a href="/public/galerie.php">galerie</a>
+      <a href="/public/contact.php">contact</a>
       <!-- Call-to-action knop rechts in de navigatie -->
       <div class="nav-cta">
-        <a class="btn btn-ghost" href="/reserveren.php">reserveren</a>
+        <a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
       </div>
     </nav>
   </div>
@@ -53,8 +53,8 @@
 
         <!-- Primaire actieknoppen: naar het menu of direct reserveren -->
         <div class="hero-actions">
-          <a class="btn btn-primary" href="/menu.php">Bekijk menu</a>
-          <a class="btn btn-ghost" href="/reserveren.php">Reserveer</a>
+          <a class="btn btn-primary" href="/public/menu.php">Bekijk menu</a>
+          <a class="btn btn-ghost" href="/public/reserveren.php">Reserveer</a>
         </div>
       </div>
 

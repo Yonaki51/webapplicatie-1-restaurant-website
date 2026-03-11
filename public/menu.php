@@ -1,8 +1,8 @@
 <?php
 // menu.php – Menuoverzichtspagina
 // Laad de databaseverbinding en haal alle menukaartitems op via een prepared statement
-include("dbcalls/conn.php");
-include("dbcalls/menukaart/read.php");
+include("../dbcalls/conn.php");
+include("../dbcalls/menukaart/read.php");
 ?>
 <!doctype html>
 <html lang="nl">
@@ -22,19 +22,19 @@ include("dbcalls/menukaart/read.php");
   <header class="site-header">
     <div class="container header-inner">
       <!-- Logo en restaurantnaam -->
-      <a class="brand" href="/index.php">
+      <a class="brand" href="/public/index.php">
         <span class="brand-mark">鮨</span>
         <span>Sushi House<small>menu</small></span>
       </a>
       <nav class="nav">
-        <a href="/index.php">home</a>
-        <a class="active" href="/menu.php">menu</a>
-        <a href="/galerie.php">galerie</a>
-        <a href="/contact.php">contact</a>
+        <a href="/public/index.php">home</a>
+        <a class="active" href="/public/menu.php">menu</a>
+        <a href="/public/galerie.php">galerie</a>
+        <a href="/public/contact.php">contact</a>
         <!-- Call-to-action knoppen: reserveren en bestellen -->
         <div class="nav-cta">
-          <a class="btn btn-ghost" href="/reserveren.php">reserveren</a>
-          <a class="btn btn-primary" href="/bestellen.php">bestellen</a>
+          <a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
+          <a class="btn btn-primary" href="/public/bestellen.php">bestellen</a>
         </div>
       </nav>
     </div>

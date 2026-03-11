@@ -14,18 +14,18 @@
 <!-- Sticky navigatiebalk met directe links naar alle hoofdpagina's -->
 <header class="site-header">
 	<div class="container header-inner">
-		<a class="brand" href="/index.php">
+		<a class="brand" href="/public/index.php">
 			<span class="brand-mark">鮨</span>
 			<span>Sushi House<small>admin</small></span>
 		</a>
 		<nav class="nav">
-			<a href="/index.php">home</a>
-			<a href="/menu.php">menu</a>
-			<a href="/galerie.php">galerie</a>
-			<a href="/contact.php">contact</a>
-			<a class="active" href="/admin.php">admin</a>
+			<a href="/public/index.php">home</a>
+			<a href="/public/menu.php">menu</a>
+			<a href="/public/galerie.php">galerie</a>
+			<a href="/public/contact.php">contact</a>
+			<a class="active" href="/public/admin.php">admin</a>
 			<div class="nav-cta">
-				<a class="btn btn-ghost" href="/reserveren.php">reserveren</a>
+				<a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
 			</div>
 		</nav>
 	</div>
@@ -48,8 +48,8 @@
 					<h3>Menukaart beheren</h3>
 					<p>Voeg gerechten toe of werk bestaande items bij.</p>
 					<div class="hero-actions">
-						<a class="btn btn-ghost" href="/menu.php">beheer menu</a>
-						<a class="btn btn-primary" href="/menu.php">Bekijk menu</a>
+						<a class="btn btn-ghost" href="/public/menu.php">beheer menu</a>
+						<a class="btn btn-primary" href="/public/menu.php">Bekijk menu</a>
 					</div>
 				</article>
 
@@ -58,7 +58,7 @@
 					<h3>Reserveringen</h3>
 					<p>Controleer reserveringsaanvragen en plan de tafels.</p>
 					<div class="hero-actions">
-						<a class="btn btn-ghost" href="/reserveren.php">Naar reserveren</a>
+						<a class="btn btn-ghost" href="/public/reserveren.php">Naar reserveren</a>
 					</div>
 				</article>
 
@@ -67,8 +67,8 @@
 					<h3>Paginacontent</h3>
 					<p>Loop door pagina's om teksten en afbeeldingen te controleren.</p>
 					<div class="hero-actions">
-						<a class="btn btn-ghost" href="/galerie.php">Galerie</a>
-						<a class="btn btn-ghost" href="/contact.php">Contact</a>
+						<a class="btn btn-ghost" href="/public/galerie.php">Galerie</a>
+						<a class="btn btn-ghost" href="/public/contact.php">Contact</a>
 					</div>
 				</article>
 			</div>

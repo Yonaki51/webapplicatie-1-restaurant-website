@@ -15,17 +15,17 @@
 <header class="site-header">
   <div class="container header-inner">
     <!-- Logo en restaurantnaam -->
-    <a class="brand" href="/index.php">
+    <a class="brand" href="/public/index.php">
       <span class="brand-mark">鮨</span>
       <span>Sushi House<small>reserveren</small></span>
     </a>
     <nav class="nav">
-      <a href="/index.php">home</a>
-      <a href="/menu.php">menu</a>
-      <a href="/galerie.php">galerie</a>
-      <a href="/contact.php">contact</a>
+      <a href="/public/index.php">home</a>
+      <a href="/public/menu.php">menu</a>
+      <a href="/public/galerie.php">galerie</a>
+      <a href="/public/contact.php">contact</a>
       <div class="nav-cta">
-        <a class="btn btn-ghost active" href="/reserveren.php">reserveren</a>
+        <a class="btn btn-ghost active" href="/public/reserveren.php">reserveren</a>
       </div>
     </nav>
   </div>
