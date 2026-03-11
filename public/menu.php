@@ -54,7 +54,7 @@ foreach ($result as $dish) {
         // Loop door elke categorie en toon de bijbehorende gerechten
         foreach ($per_categorie as $categorie => $dishes):
           ?>
-          <!-- ========== CATEGORIE: <?php echo strtoupper($categorie); ?> ========== -->
+          <!-- Laat categorie zien -->
           <div class="section-head" style="margin-top: 28px;">
             <h2><?php echo $categorie; ?></h2>
           </div>
