@@ -5,10 +5,13 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Genmai - Admin</title>
+	<!-- Globale stylesheet voor de gehele website -->
 	<link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
 
+<!-- ========== HEADER / NAVIGATIE ========== -->
+<!-- Sticky navigatiebalk met directe links naar alle hoofdpagina's -->
 <header class="site-header">
 	<div class="container header-inner">
 		<a class="brand" href="/index.php">
@@ -28,6 +31,8 @@
 	</div>
 </header>
 
+<!-- ========== HOOFDINHOUD ========== -->
+<!-- Dashboard met kaarten voor menu-, reserverings- en contentbeheer -->
 <main class="section">
 	<div class="container">
 		<div class="panel">
@@ -36,6 +41,7 @@
 				<p>Beheer hier onderdelen van de website en inhoud van het menu.</p>
 			</div>
 
+			<!-- Beheerkaarten met snelle actieknoppen -->
 			<div class="cards">
 				<article class="card">
 					<div class="chip">Menu</div>
@@ -70,17 +76,22 @@
 	</div>
 </main>
 
+<!-- ========== FOOTER ========== -->
+<!-- Voettekst met contactgegevens, openingstijden en social media links -->
 <footer class="site-footer">
 	<div class="container footer-inner">
 		<div class="footer-col">
+			<!-- Kolom 1: adres en telefoonnummer -->
 			<h4>contact informatie:</h4>
 			<p>Sushi Street 99<br>1000 AB Atlantis<br>06-00000000</p>
 		</div>
 		<div class="footer-col">
+			<!-- Kolom 2: openingstijden -->
 			<h4>openingstijden:</h4>
 			<p>ma-zo: 12:00 - 22:00<br>keuken sluit: 21:30</p>
 		</div>
 		<div class="footer-col">
+			<!-- Kolom 3: social media -->
 			<h4>houd contact:</h4>
 			<p>instagram<br>facebook</p>
 		</div>
