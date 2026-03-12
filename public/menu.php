@@ -39,6 +39,7 @@ foreach ($result as $dish) {
         <a href="/public/contact.php">contact</a>
         <!-- Call-to-action knoppen: reserveren en bestellen -->
         <div class="nav-cta">
+            <a class="btn btn-primary" href="/public/login.php">login</a>
           <a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
           <a class="btn btn-primary" href="/public/bestellen.php">bestellen</a>
         </div>

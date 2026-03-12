@@ -25,6 +25,7 @@
       <a href="/public/galerie.php">galerie</a>
       <a href="/public/contact.php">contact</a>
       <div class="nav-cta">
+        <a class="btn btn-primary" href="/public/login.php">login</a>
         <a class="btn btn-ghost active" href="/public/reserveren.php">reserveren</a>
       </div>
     </nav>

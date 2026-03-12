@@ -31,6 +31,7 @@
       <a href="/public/contact.php">contact</a>
       <!-- Call-to-action knop rechts in de navigatie -->
       <div class="nav-cta">
+        <a class="btn btn-primary" href="/public/login.php">login</a>
         <a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
       </div>
     </nav>
