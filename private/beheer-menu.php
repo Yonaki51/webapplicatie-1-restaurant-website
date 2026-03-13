@@ -37,7 +37,7 @@
 		<div class="panel">
 			<div class="section-head">
 				<h2>Menukaart beheren</h2>
-				<p>Kies een bewerking: voeg een gerecht toe, wijzig een bestaand gerecht of verwijder een gerecht.</p>
+				<p>Kies een bewerking: voeg een gerecht toe of beheer een bestaand gerecht.</p>
 			</div>
 
 			<!-- CRUD-kaarten -->
@@ -52,23 +52,13 @@
 					</div>
 				</article>
 
-				<!-- Bewerken -->
+				<!-- Beheren -->
 				<article class="card">
-					<div class="chip">Bewerken</div>
-					<h3>Gerecht bewerken</h3>
-					<p>Wijzig de naam, beschrijving, prijs of allergenen van een bestaand gerecht.</p>
+					<div class="chip">Beheren</div>
+					<h3>Gerecht bewerken of verwijderen</h3>
+					<p>Pas een bestaand gerecht aan of verwijder het definitief.</p>
 					<div class="hero-actions">
-						<a class="btn btn-ghost" href="/private/menu-bewerken.php">Gerecht bewerken</a>
-					</div>
-				</article>
-
-				<!-- Verwijderen -->
-				<article class="card">
-					<div class="chip">Verwijderen</div>
-					<h3>Gerecht verwijderen</h3>
-					<p>Verwijder een gerecht definitief uit de menukaart.</p>
-					<div class="hero-actions">
-						<a class="btn btn-ghost" href="/private/menu-verwijderen.php">Gerecht verwijderen</a>
+						<a class="btn btn-ghost" href="/private/bewerken-verwijderen.php">Gerecht beheren</a>
 					</div>
 				</article>
 			</div>

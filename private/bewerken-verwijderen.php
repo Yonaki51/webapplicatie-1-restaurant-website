@@ -1,10 +1,10 @@
-<!-- menu-verwijderen.php – Bevestigingspagina voor het verwijderen van een gerecht. -->
+<!-- bewerken-verwijderen.php – Gecombineerde pagina voor gerecht bewerken en verwijderen. -->
 <!doctype html>
 <html lang="nl">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Genmai - Gerecht verwijderen</title>
+	<title>Genmai - Gerecht beheren</title>
 	<link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
@@ -34,50 +34,65 @@
 	<div class="container">
 		<div class="panel">
 			<div class="section-head">
-				<h2>Gerecht verwijderen</h2>
-				<p>Selecteer een gerecht uit de lijst en bevestig de verwijdering.</p>
+				<h2>Gerecht beheren</h2>
+				<p>Bewerk hier een bestaand gerecht of verwijder het.</p>
 			</div>
 
-			<!-- Gerechtenlijst – voorbeeld items (vervang later door database-inhoud) -->
-			<div class="section-head" style="margin-top:18px;">
-				<h3 style="margin:0 0 6px;">Kies een gerecht om te verwijderen</h3>
+			<!-- Bewerkingsformulier -->
+			<div style="margin-top:18px;">
+				<div class="section-head">
+					<h3 style="margin:0 0 6px;">Gerecht aanpassen</h3>
+				</div>
+				<form method="POST" action="/private/bewerken-verwijderen.php">
+					<input type="hidden" name="id" value="" />
+					<div class="form-grid">
+						<div class="form-group">
+							<label for="naam">Naam <span style="color:var(--accent)">*</span></label>
+							<input type="text" id="naam" name="naam" required />
+						</div>
+
+						<div class="form-group">
+							<label for="prijs">Prijs (€) <span style="color:var(--accent)">*</span></label>
+							<input type="number" id="prijs" name="prijs" step="0.01" min="0" required />
+						</div>
+
+						<div class="form-group form-group--full">
+							<label for="beschrijving">Beschrijving <span style="color:var(--accent)">*</span></label>
+							<textarea id="beschrijving" name="beschrijving" rows="3" required></textarea>
+						</div>
+
+						<div class="form-group">
+							<label for="allergenen">Allergenen</label>
+							<input type="text" id="allergenen" name="allergenen" placeholder="bijv. gluten, vis" />
+						</div>
+
+						<div class="form-group">
+							<label for="afbeelding">Afbeelding (URL)</label>
+							<input type="text" id="afbeelding" name="afbeelding" placeholder="bijv. /assets/img/gerecht.jpg" />
+						</div>
+					</div>
+
+					<div class="form-actions hero-actions">
+						<button type="submit" class="btn btn-primary">Wijzigingen opslaan</button>
+						<a class="btn btn-ghost" href="/private/bewerken-verwijderen.php">Annuleren</a>
+					</div>
+				</form>
 			</div>
-			<div class="menu-grid">
-				<div class="dish">
-					<div class="dish-content">
-						<h4>Zalm Nigiri</h4>
-						<p>Rijst met verse zalm.</p>
-					</div>
-					<div class="price">€ 4,50</div>
-				</div>
 
-				<div class="dish">
-					<div class="dish-content">
-						<h4>Tuna Sashimi</h4>
-						<p>Tonijn, wasabi, gember.</p>
-					</div>
-					<div class="price">€ 8,50</div>
-				</div>
-
-				<div class="dish">
-					<div class="dish-content">
-						<h4>Gyoza (6 stuks)</h4>
-						<p>Japanse dumplings met dip.</p>
-					</div>
-					<div class="price">€ 6,00</div>
-				</div>
-			</div>
-
-			<!-- Bevestigingsformulier -->
+			<!-- Verwijdersectie -->
 			<div style="margin-top:28px;">
+				<div class="section-head">
+					<h3 style="margin:0 0 6px;">Gerecht verwijderen</h3>
+				</div>
+
 				<div class="card" style="border-color:var(--accent);">
 					<h3 style="margin:0 0 8px;">Verwijderen bevestigen</h3>
 					<p>Weet je zeker dat je het geselecteerde gerecht wilt verwijderen? Dit kan niet ongedaan worden gemaakt.</p>
-					<form method="POST" action="/private/menu-verwijderen.php">
+					<form method="POST" action="/private/bewerken-verwijderen.php">
 						<input type="hidden" name="id" value="" />
 						<div class="hero-actions">
 							<button type="submit" class="btn btn-primary">Ja, verwijder dit gerecht</button>
-							<a class="btn btn-ghost" href="/private/menu-verwijderen.php">Annuleren</a>
+							<a class="btn btn-ghost" href="/private/bewerken-verwijderen.php">Annuleren</a>
 						</div>
 					</form>
 				</div>
