@@ -1,3 +1,20 @@
+<?php
+include("../dbcalls/conn.php");
+include("../dbcalls/menukaart/read.php");
+
+// Categorieen uit de database halen.
+$categorieen = array();
+foreach ($result as $gerecht) {
+	if (!empty($gerecht['categorie']) && !in_array($gerecht['categorie'], $categorieen, true)) {
+		$categorieen[] = $gerecht['categorie'];
+	}
+}
+
+// Fallback als er nog geen categorieen in de database staan.
+if (empty($categorieen)) {
+	$categorieen = array("Voorgerecht", "Sushi rolls", "Nigiri & Sashimi", "Ramen & Soepen");
+}
+?>
 <!-- menu-aanmaken.php – Formulier om een nieuw gerecht toe te voegen aan de menukaart. -->
 <!doctype html>
 <html lang="nl">
@@ -52,10 +69,9 @@
 							<label>Categorie <span style="color:var(--accent)">*</span></label>
 							<select id="categorie" name="categorie" required>
 								<option value="">-- Kies een categorie --</option>
-								<option value="Voorgerecht">Voorgerecht</option>
-								<option value="Sushi rolls">Sushi rolls</option>
-								<option value="Nigiri & Sashimi">Nigiri & Sashimi</option>
-								<option value="Ramen & Soepen">Ramen & Soepen</option>
+								<?php foreach ($categorieen as $categorie): ?>
+									<option value="<?php echo htmlspecialchars($categorie); ?>"><?php echo htmlspecialchars($categorie); ?></option>
+								<?php endforeach; ?>
 							</select>
 							<div class="form-group">
 								<label>Prijs (€) <span style="color:var(--accent)">*</span></label>
