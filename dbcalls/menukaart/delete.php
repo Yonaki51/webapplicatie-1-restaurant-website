@@ -1,6 +1,16 @@
 <?php
-// delete.php – Verwijdert een gerecht uit de 'menukaart'-tabel op basis van ID.
-// Vereist: $conn (PDO-object) via dbcalls/conn.php.
-// Verwacht POST-parameter: id.
+include("../conn.php");
 
-// TODO: implementeer het verwijderen van een menukaart-item
+$id = 0;
+if (isset($_POST['id'])) {
+	$id = (int)$_POST['id'];
+}
+
+if (!$id) {
+	exit;
+}
+
+$sql = "DELETE FROM `menukaart` WHERE `ID` = :id";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':id', $id);
+$stmt->execute();
