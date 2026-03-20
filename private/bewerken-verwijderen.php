@@ -1,3 +1,43 @@
+<?php
+// Databaseverbinding en alle gerechten ophalen.
+include("../dbcalls/conn.php");
+include("../dbcalls/menukaart/read.php");
+
+// Categorieen uit de database halen.
+$categorieen = array();
+foreach ($result as $gerecht) {
+	if (!empty($gerecht['categorie']) && !in_array($gerecht['categorie'], $categorieen, true)) {
+		$categorieen[] = $gerecht['categorie'];
+	}
+}
+
+// Fallback als er nog geen categorieen in de database staan.
+if (empty($categorieen)) {
+	$categorieen = array("Voorgerecht", "Sushi rolls", "Nigiri & Sashimi", "Ramen & Soepen");
+}
+
+// ID van het gekozen gerecht uit de URL halen.
+$selected_id = 0;
+if (isset($_GET['id'])) {
+	$selected_id = (int)$_GET['id'];
+}
+
+// Hier bewaren we het gerecht dat bij het gekozen ID hoort.
+$geselecteerd_gerecht = null;
+
+foreach ($result as $gerecht) {
+	if ((int)$gerecht['ID'] === (int)$selected_id) {
+		$geselecteerd_gerecht = $gerecht;
+		break;
+	}
+}
+
+// Alleen de bestandsnaam van de afbeelding tonen in het formulier.
+$afbeelding_bestandsnaam = '';
+if ($geselecteerd_gerecht && !empty($geselecteerd_gerecht['Afbeelding'])) {
+	$afbeelding_bestandsnaam = str_replace('/assets/img/', '', $geselecteerd_gerecht['Afbeelding']);
+}
+?>
 <!-- bewerken-verwijderen.php – Gecombineerde pagina voor gerecht bewerken en verwijderen. -->
 <!doctype html>
 <html lang="nl">
@@ -38,37 +78,67 @@
 				<p>Bewerk hier een bestaand gerecht of verwijder het.</p>
 			</div>
 
+			<!-- Kies eerst welk gerecht je wilt bewerken. -->
+			<form method="GET" action="/private/bewerken-verwijderen.php" style="margin-top:18px;">
+				<div class="form-group form-group--full">
+					<label for="id">Kies een gerecht</label>
+					<select id="id" name="id" onchange="this.form.submit()" required>
+						<option value="">-- Kies een gerecht --</option>
+						<?php foreach ($result as $gerecht): ?>
+							<option value="<?php echo (int)$gerecht['ID']; ?>" <?php echo ((int)$selected_id == (int)$gerecht['ID']) ? 'selected' : ''; ?>>
+								<?php echo ($gerecht['Naam']); ?>
+							</option>
+						<?php endforeach; ?>
+					</select>
+				</div>
+				<noscript>
+					<div class="hero-actions">
+						<button type="submit" class="btn btn-ghost">Laden</button>
+					</div>
+				</noscript>
+			</form>
+
 			<!-- Bewerkingsformulier -->
 			<div style="margin-top:18px;">
 				<div class="section-head">
 					<h3 style="margin:0 0 6px;">Gerecht aanpassen</h3>
 				</div>
-				<form method="POST" action="/private/bewerken-verwijderen.php">
-					<input type="hidden" name="id" value="" />
+				<form method="POST" action="/dbcalls/menukaart/update.php">
+					<input type="hidden" name="ID" value="<?php echo $geselecteerd_gerecht ? (int)$geselecteerd_gerecht['ID'] : ''; ?>" />
 					<div class="form-grid">
 						<div class="form-group">
 							<label for="naam">Naam <span style="color:var(--accent)">*</span></label>
-							<input type="text" id="naam" name="naam" required />
+							<input type="text" id="naam" name="naam" value="<?php echo $geselecteerd_gerecht ? ($geselecteerd_gerecht['Naam']) : ''; ?>" required />
+						</div>
+
+						<div class="form-group">
+							<label for="categorie">Categorie <span style="color:var(--accent)">*</span></label>
+							<select id="categorie" name="categorie" required>
+								<option value="">-- Kies een categorie --</option>
+								<?php foreach ($categorieen as $categorie): ?>
+									<option value="<?php echo ($categorie); ?>" <?php echo ($geselecteerd_gerecht && $geselecteerd_gerecht['categorie'] === $categorie) ? 'selected' : ''; ?>><?php echo htmlspecialchars($categorie); ?></option>
+								<?php endforeach; ?>
+							</select>
 						</div>
 
 						<div class="form-group">
 							<label for="prijs">Prijs (€) <span style="color:var(--accent)">*</span></label>
-							<input type="number" id="prijs" name="prijs" step="0.01" min="0" required />
+							<input type="number" id="prijs" name="prijs" step="0.01" min="0" value="<?php echo $geselecteerd_gerecht ? ($geselecteerd_gerecht['Prijs']) : ''; ?>" required />
 						</div>
 
 						<div class="form-group form-group--full">
 							<label for="beschrijving">Beschrijving <span style="color:var(--accent)">*</span></label>
-							<textarea id="beschrijving" name="beschrijving" rows="3" required></textarea>
+							<textarea id="beschrijving" name="beschrijving" rows="3" required><?php echo $geselecteerd_gerecht ? ($geselecteerd_gerecht['Beschrijving']) : ''; ?></textarea>
 						</div>
 
 						<div class="form-group">
 							<label for="allergenen">Allergenen</label>
-							<input type="text" id="allergenen" name="allergenen" placeholder="bijv. gluten, vis" />
+							<input type="text" id="allergenen" name="allergenen" placeholder="bijv. gluten, vis" value="<?php echo $geselecteerd_gerecht ? ($geselecteerd_gerecht['Allergenen']) : ''; ?>" />
 						</div>
 
 						<div class="form-group">
-							<label for="afbeelding">Afbeelding (URL)</label>
-							<input type="text" id="afbeelding" name="afbeelding" placeholder="bijv. /assets/img/gerecht.jpg" />
+							<label for="afbeelding">Afbeelding (bestandsnaam)</label>
+							<input type="text" id="afbeelding" name="afbeelding" placeholder="bijv. gerecht.jpg" value="<?php echo ($afbeelding_bestandsnaam); ?>" />
 						</div>
 					</div>
 
@@ -88,8 +158,8 @@
 				<div class="card" style="border-color:var(--accent);">
 					<h3 style="margin:0 0 8px;">Verwijderen bevestigen</h3>
 					<p>Weet je zeker dat je het geselecteerde gerecht wilt verwijderen? Dit kan niet ongedaan worden gemaakt.</p>
-					<form method="POST" action="/private/bewerken-verwijderen.php">
-						<input type="hidden" name="id" value="" />
+					<form method="POST" action="/dbcalls/menukaart/delete.php">
+						<input type="hidden" name="id" value="<?php echo $geselecteerd_gerecht ? (int)$geselecteerd_gerecht['ID'] : ''; ?>" />
 						<div class="hero-actions">
 							<button type="submit" class="btn btn-primary">Ja, verwijder dit gerecht</button>
 							<a class="btn btn-ghost" href="/private/bewerken-verwijderen.php">Annuleren</a>
