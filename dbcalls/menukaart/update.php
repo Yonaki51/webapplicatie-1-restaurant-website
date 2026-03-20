@@ -32,3 +32,5 @@ $stmt->bindParam(':ID', $ID);
 
 // Voer de query uit op de database
 $stmt->execute();
+header ("location: ../../private/bewerken-verwijderen.php");
+exit;
