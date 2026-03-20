@@ -4,7 +4,7 @@
 // Resultaat: $result – array met alle rijen uit de menukaart.
 
 // SQL-query om alle rijen op te halen uit de menukaart-tabel
-$sql = "SELECT * FROM menukaart";
+$sql = "SELECT * FROM menukaart ORDER BY Naam ASC";
 
 // Prepared statement voorkomt SQL-injectie
 $stmt = $conn->prepare($sql);
