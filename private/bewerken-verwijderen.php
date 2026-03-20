@@ -5,6 +5,7 @@ include("../dbcalls/menukaart/read.php");
 
 // Categorieen uit de database halen.
 $categorieen = array();
+$show_success = isset($_GET['updated']) && $_GET['updated'] == '1';
 foreach ($result as $gerecht) {
 	if (!empty($gerecht['categorie']) && !in_array($gerecht['categorie'], $categorieen, true)) {
 		$categorieen[] = $gerecht['categorie'];
