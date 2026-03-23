@@ -24,3 +24,4 @@ $stmt->bindParam(':prijs', $prijs);
 
 // execute on db
 $stmt->execute();
+header('Location: ../../private/bewerken-verwijderen.php');
