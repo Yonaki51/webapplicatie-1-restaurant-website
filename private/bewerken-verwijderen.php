@@ -219,13 +219,13 @@ if ($geselecteerd_gerecht && !empty($geselecteerd_gerecht['Afbeelding'])) {
 		<script>
 			setTimeout(function () {
 				var msg = document.getElementById('success-message');
-				if (!msg) return;
+				if (msg) {
+					msg.classList.add('fade-out');
 
-				msg.classList.add('fade-out');
-
-				msg.addEventListener('transitionend', function () {
-					msg.style.display = 'none';
-				}, { once: true });
+					msg.addEventListener('transitionend', function () {
+						msg.style.display = 'none';
+					}, { once: true });
+				}
 			}, 3000);
 		</script>
 	<?php endif; ?>
