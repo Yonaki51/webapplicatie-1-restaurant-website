@@ -6,6 +6,7 @@ include("../dbcalls/menukaart/read.php");
 // Categorieen uit de database halen.
 $categorieen = array();
 $show_success = isset($_GET['updated']) && $_GET['updated'] == '1';
+$show_delete_success = isset($_GET['deleted']) && $_GET['deleted'] == '1';
 foreach ($result as $gerecht) {
 	if (!empty($gerecht['categorie']) && !in_array($gerecht['categorie'], $categorieen, true)) {
 		$categorieen[] = $gerecht['categorie'];
@@ -71,6 +72,7 @@ if ($geselecteerd_gerecht && !empty($geselecteerd_gerecht['Afbeelding'])) {
 					<a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
 				</div>
 			</nav>
+			
 		</div>
 	</header>
 
@@ -79,6 +81,7 @@ if ($geselecteerd_gerecht && !empty($geselecteerd_gerecht['Afbeelding'])) {
 		<div class="container">
 			<div class="panel">
 				<div class="section-head">
+					
 					<h2>Gerecht beheren</h2>
 					<p>Bewerk hier een bestaand gerecht of verwijder het.</p>
 				</div>
@@ -86,6 +89,12 @@ if ($geselecteerd_gerecht && !empty($geselecteerd_gerecht['Afbeelding'])) {
 					<div id="success-message" class="card" style="margin-top:14px; border-color:#2e7d32;">
 						<h3 style="margin:0 0 6px;">Gelukt</h3>
 						<p>Je wijzigingen zijn succesvol opgeslagen.</p>
+					</div>
+				<?php endif; ?>
+				<?php if ($show_delete_success): ?>
+					<div id="delete-message" class="card" style="margin-top:14px; border-color:#2e7d32;">
+						<h3 style="margin:0 0 6px;">Verwijderd</h3>
+						<p>Het gerecht is succesvol verwijderd.</p>
 					</div>
 				<?php endif; ?>
 				<!-- Kies eerst welk gerecht je wilt bewerken. -->
@@ -188,6 +197,7 @@ if ($geselecteerd_gerecht && !empty($geselecteerd_gerecht['Afbeelding'])) {
 								<a class="btn btn-ghost" href="/private/bewerken-verwijderen.php">Annuleren</a>
 							</div>
 						</form>
+						
 					</div>
 				</div>
 
@@ -215,15 +225,21 @@ if ($geselecteerd_gerecht && !empty($geselecteerd_gerecht['Afbeelding'])) {
 			</div>
 		</div>
 	</footer>
-	<?php if ($show_success): ?>
+	<?php if ($show_success || $show_delete_success): ?>
 		<script>
 			setTimeout(function () {
 				var msg = document.getElementById('success-message');
 				if (msg) {
 					msg.classList.add('fade-out');
-
 					msg.addEventListener('transitionend', function () {
 						msg.style.display = 'none';
+					}, { once: true });
+				}
+				var deleteMsg = document.getElementById('delete-message');
+				if (deleteMsg) {
+					deleteMsg.classList.add('fade-out');
+					deleteMsg.addEventListener('transitionend', function () {
+						deleteMsg.style.display = 'none';
 					}, { once: true });
 				}
 			}, 3000);

@@ -539,6 +539,15 @@ a:hover {
   opacity: 0;
 }
 
+#delete-message {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+#delete-message.fade-out {
+  opacity: 0;
+}
+
 /* ==========================================================================
    Media Queries
    All responsive breakpoints are collected here for easy maintenance.
