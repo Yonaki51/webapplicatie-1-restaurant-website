@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!-- index.php – Startpagina van de Sushi House website -->
 <!doctype html>
 <html lang="nl">
@@ -31,8 +32,18 @@
       <a href="/public/contact.php">contact</a>
       <!-- Call-to-action knop rechts in de navigatie -->
       <div class="nav-cta">
+                <a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
+        <?php
+        if (isset($_SESSION['loggedin']) && $_SESSION == true) {
+        ?>
+        <a class="btn btn-primary" href="/public/login.php">admin</a>
+        <a class="btn btn-primary" href="/public/login.php">uitloggen </a>
+        <?php
+        } else{
+        ?>
         <a class="btn btn-primary" href="/public/login.php">login</a>
-        <a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
+        <?php } ?>
+
       </div>
     </nav>
   </div>

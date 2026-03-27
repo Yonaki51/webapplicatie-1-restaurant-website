@@ -35,7 +35,7 @@
 				<p>Voor nu ga je direct naar de adminpagina wanneer je op login klikt.</p>
 			</div>
 
-			<form method="post" action="/private/admin.php" class="reservation-form">
+			<form method="post" action="/dbcalls/login/session.php" class="reservation-form">
 				<div class="form-grid">
 					<div class="form-group">
 						<label for="gebruikersnaam">Gebruikersnaam</label>
