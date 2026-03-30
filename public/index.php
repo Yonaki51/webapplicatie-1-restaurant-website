@@ -34,10 +34,10 @@
       <div class="nav-cta">
                 <a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
         <?php
-        if (isset($_SESSION['loggedin']) && $_SESSION == true) {
+        if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         ?>
-        <a class="btn btn-primary" href="/public/login.php">admin</a>
-        <a class="btn btn-primary" href="/public/login.php">uitloggen </a>
+        <a class="btn btn-primary" href="/private/admin.php">admin</a>
+        <a class="btn btn-primary" href="/dbcalls/login/logout.php">uitloggen</a>
         <?php
         } else{
         ?>
