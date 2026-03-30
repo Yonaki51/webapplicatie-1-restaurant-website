@@ -4,14 +4,13 @@ include("../conn.php");
 
 $sql = "SELECT gebruikersnaam, wachtwoord
         FROM gebruikers
-        WHERE gebruikersnaam = :gebruikersnaam && wachtwoord = :wachtwoord
+        WHERE gebruikersnaam = :gebruikersnaam
         ";
 
 // preparestatement
 $stmt = $conn->prepare($sql);
 
 $stmt->bindParam(":gebruikersnaam", $_POST["gebruikersnaam"]);
-$stmt->bindParam(":wachtwoord", $_POST["wachtwoord"]);
 
 //execute on db
 $stmt->execute();
@@ -19,7 +18,7 @@ $stmt->execute();
 //ophalen van data
 $result = $stmt->fetch();
 
-if (!$result) {
+if (!$result || !password_verify($_POST["wachtwoord"], $result["wachtwoord"])) {
     header("Location: /public/login.php?error=1");
     exit;
 }
