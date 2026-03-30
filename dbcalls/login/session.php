@@ -20,11 +20,12 @@ $stmt->execute();
 $result = $stmt->fetch();
 
 if (!$result) {
-    echo "je bent niet ingelogd";
-} else {
-
-    $_SESSION["loggedin"] = true;
-    $_SESSION["gebruikersnaam"] = $result["gebruikersnaam"];
-
-    header ("location: /private/admin.php");
+    header("Location: /public/login.php?error=1");
+    exit;
 }
+
+$_SESSION["loggedin"] = true;
+$_SESSION["gebruikersnaam"] = $result["gebruikersnaam"];
+
+header("Location: /private/admin.php");
+exit;

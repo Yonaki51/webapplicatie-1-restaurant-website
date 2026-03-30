@@ -2,6 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 }
+$login_failed = isset($_GET['error']) && $_GET['error'] === '1';
 ?>
 <!-- login.php – Simpele loginpagina zonder authenticatie -->
 <!doctype html>
@@ -45,6 +46,12 @@ if (session_status() === PHP_SESSION_NONE) {
 				<h2>Login</h2>
 				<p>Voor nu ga je direct naar de adminpagina wanneer je op login klikt.</p>
 			</div>
+
+			<?php if ($login_failed): ?>
+				<div class="form-notice form-notice--error">
+					Inloggen mislukt. Controleer je gebruikersnaam en wachtwoord.
+				</div>
+			<?php endif; ?>
 
 			<form method="post" action="/dbcalls/login/session.php" class="reservation-form">
 				<div class="form-grid">
