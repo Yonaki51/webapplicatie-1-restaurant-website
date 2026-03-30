@@ -24,4 +24,5 @@ $stmt->bindParam(':prijs', $prijs);
 
 // execute on db
 $stmt->execute();
-header('Location: ../../private/menu-aanmaken.php');
+header('Location: ../../private/menu-aanmaken.php?created=1');
+exit;
