@@ -1,6 +1,9 @@
 <?php
 // menu.php – Menuoverzichtspagina
 // Laad de databaseverbinding en haal alle menukaartitems op via een prepared statement
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 include("../dbcalls/conn.php");
 include("../dbcalls/menukaart/read.php");
 
@@ -39,7 +42,12 @@ foreach ($result as $dish) {
         <a href="/public/contact.php">contact</a>
         <!-- Call-to-action knoppen: reserveren en bestellen -->
         <div class="nav-cta">
+          <?php if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
+            <a class="btn btn-primary" href="/private/admin.php">admin</a>
+            <a class="btn btn-primary" href="/dbcalls/login/logout.php">uitloggen</a>
+          <?php else: ?>
             <a class="btn btn-primary" href="/public/login.php">login</a>
+          <?php endif; ?>
           <a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
           <a class="btn btn-primary" href="/public/bestellen.php">bestellen</a>
         </div>

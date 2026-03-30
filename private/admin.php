@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
+?>
 <!-- admin.php – Adminpagina in dezelfde stijl als de rest van de site -->
 <!doctype html>
 <html lang="nl">
@@ -25,6 +30,11 @@
 			<a href="/public/contact.php">contact</a>
 			<a class="active" href="/private/admin.php">admin</a>
 			<div class="nav-cta">
+				<?php if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
+					<a class="btn btn-primary" href="/dbcalls/login/logout.php">uitloggen</a>
+				<?php else: ?>
+					<a class="btn btn-primary" href="/public/login.php">login</a>
+				<?php endif; ?>
 				<a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
 			</div>
 		</nav>
