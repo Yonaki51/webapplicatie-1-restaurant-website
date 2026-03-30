@@ -1,6 +1,10 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
+	if (empty($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+		header("Location: /public/login.php?error=1");
+		exit;
+	}
 }
 include("../dbcalls/conn.php");
 include("../dbcalls/menukaart/read.php");
@@ -17,7 +21,11 @@ foreach ($result as $gerecht) {
 if (empty($categorieen)) {
 	$categorieen = array("Voorgerecht", "Sushi rolls", "Nigiri & Sashimi", "Ramen & Soepen");
 }
+// Controleer of create succes was
+$show_create_success = isset($_GET['created']) && $_GET['created'] == '1';
 ?>
+
+
 <!-- menu-aanmaken.php – Formulier om een nieuw gerecht toe te voegen aan de menukaart. -->
 <!doctype html>
 <html lang="nl">
@@ -63,6 +71,12 @@ if (empty($categorieen)) {
 				<div class="section-head">
 					<h2>Gerecht aanmaken</h2>
 					<p>Vul de onderstaande gegevens in om een nieuw gerecht aan de menukaart toe te voegen.</p>
+					<?php if ($show_create_success): ?>
+						<div id="success-message" class="card" style="margin-top:14px; border-color:#2e7d32;">
+							<h3 style="margin:0 0 6px;">Gelukt</h3>
+							<p>Het gerecht is succesvol toegevoegd.</p>
+						</div>
+					<?php endif; ?>
 				</div>
 
 				<!-- Aanmaakformulier -->
@@ -78,7 +92,9 @@ if (empty($categorieen)) {
 							<select id="categorie" name="categorie" required>
 								<option value="">-- Kies een categorie --</option>
 								<?php foreach ($categorieen as $categorie): ?>
-									<option value="<?php echo htmlspecialchars($categorie); ?>"><?php echo htmlspecialchars($categorie); ?></option>
+									<option value="<?php echo htmlspecialchars($categorie); ?>">
+										<?php echo htmlspecialchars($categorie); ?>
+									</option>
 								<?php endforeach; ?>
 							</select>
 							<div class="form-group">
@@ -129,6 +145,19 @@ if (empty($categorieen)) {
 		</div>
 	</footer>
 
+	<?php if ($show_create_success): ?>
+		<script>
+			setTimeout(function () {
+				var msg = document.getElementById('success-message');
+				if (msg) {
+					msg.classList.add('fade-out');
+					msg.addEventListener('transitionend', function () {
+						msg.style.display = 'none';
+					}, { once: true });
+				}
+			}, 3000);
+		</script>
+	<?php endif; ?>
 </body>
 
 </html>
