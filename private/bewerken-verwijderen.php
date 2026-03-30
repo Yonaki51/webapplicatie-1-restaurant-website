@@ -2,6 +2,10 @@
 // Databaseverbinding en alle gerechten ophalen.
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
+	if (empty($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+		header("Location: /public/login.php?error=1");
+		exit;
+	}
 }
 include("../dbcalls/conn.php");
 include("../dbcalls/menukaart/read.php");
@@ -80,7 +84,7 @@ if ($geselecteerd_gerecht && !empty($geselecteerd_gerecht['Afbeelding'])) {
 					<a class="btn btn-ghost" href="/public/reserveren.php">reserveren</a>
 				</div>
 			</nav>
-			
+
 		</div>
 	</header>
 
@@ -89,7 +93,7 @@ if ($geselecteerd_gerecht && !empty($geselecteerd_gerecht['Afbeelding'])) {
 		<div class="container">
 			<div class="panel">
 				<div class="section-head">
-					
+
 					<h2>Gerecht beheren</h2>
 					<p>Bewerk hier een bestaand gerecht of verwijder het.</p>
 				</div>
@@ -205,7 +209,7 @@ if ($geselecteerd_gerecht && !empty($geselecteerd_gerecht['Afbeelding'])) {
 								<a class="btn btn-ghost" href="/private/bewerken-verwijderen.php">Annuleren</a>
 							</div>
 						</form>
-						
+
 					</div>
 				</div>
 
