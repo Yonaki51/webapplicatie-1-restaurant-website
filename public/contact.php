@@ -1,7 +1,5 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
+session_start();
 ?>
 <!-- contact.php – Contactpagina met adresgegevens en Google Maps-placeholder -->
 <!doctype html>

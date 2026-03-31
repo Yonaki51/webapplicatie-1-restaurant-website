@@ -1,7 +1,5 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-	session_start();
-}
+session_start();
 $login_failed = isset($_GET['error']) && $_GET['error'] === '1';
 ?>
 <!-- login.php – Simpele loginpagina zonder authenticatie -->

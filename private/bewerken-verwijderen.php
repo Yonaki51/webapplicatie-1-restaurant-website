@@ -1,12 +1,10 @@
 <?php
 // Databaseverbinding en alle gerechten ophalen.
-if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 	if (empty($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 		header("Location: /public/login.php?error=1");
 		exit;
 	}
-}
 include("../dbcalls/conn.php");
 include("../dbcalls/menukaart/read.php");
 
@@ -35,7 +33,7 @@ if (isset($_GET['id'])) {
 $geselecteerd_gerecht = null;
 
 foreach ($result as $gerecht) {
-	if ((int) $gerecht['ID'] === (int) $selected_id) {
+	if ($gerecht['ID'] === $selected_id) {
 		$geselecteerd_gerecht = $gerecht;
 		break;
 	}

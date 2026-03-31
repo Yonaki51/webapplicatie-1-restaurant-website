@@ -1,10 +1,8 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-	session_start();
-	if (empty($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-		header("Location: /public/login.php?error=1");
-		exit;
-	}
+session_start();
+if (empty($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+	header("Location: /public/login.php?error=1");
+	exit;
 }
 ?>
 <!-- admin.php – Adminpagina in dezelfde stijl als de rest van de site -->

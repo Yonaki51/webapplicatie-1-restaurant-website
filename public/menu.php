@@ -1,9 +1,7 @@
 <?php
 // menu.php – Menuoverzichtspagina
 // Laad de databaseverbinding en haal alle menukaartitems op via een prepared statement
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
+session_start();
 include("../dbcalls/conn.php");
 include("../dbcalls/menukaart/read.php");
 
