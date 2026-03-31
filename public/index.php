@@ -8,7 +8,7 @@
   <title>Genmai - Home</title>
   <!-- Globale stylesheet voor de gehele website -->
   <link rel="stylesheet" href="/assets/css/style.css" />
-  <script src="/assets/js/script/js"></script>
+  <script src="/assets/js/script/js" defer></script>
 </head>
 <body>
 
