@@ -548,6 +548,34 @@ a:hover {
   opacity: 0;
 }
 
+/* custom elements */
+custom-knop a {
+    display: inline-block;
+    padding: .7rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+custom-knop[variant="primair"] a {
+    background: var(--accent);
+    color: var(--text);
+    border: 1px solid #7a0c1f;
+}
+
+custom-knop[variant="ghost"] a {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+custom-knop a:hover {
+    text-decoration: none;
+    opacity: .85;
+}
+
 /* ==========================================================================
    Media Queries
    All responsive breakpoints are collected here for easy maintenance.
