@@ -14,7 +14,8 @@ if (empty($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Genmai - Admin</title>
 	<!-- Globale stylesheet voor de gehele website -->
-	<link rel="stylesheet" href="/assets/css/style.css" />
+	<link rel="stylesheet" href="/assets/css/style.css"/>
+	<script src="/assets/js/script.js" defer></script>
 </head>
 
 <body>
@@ -62,8 +63,8 @@ if (empty($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 						<h3>Menukaart beheren</h3>
 						<p>Voeg gerechten toe of werk bestaande items bij.</p>
 						<div class="hero-actions">
-							<a class="btn btn-ghost" href="/private/beheer-menu.php">beheer menu</a>
-							<a class="btn btn-primary" href="/public/menu.php">Bekijk menu</a>
+							<custom-knop variant="ghost" href="/private/beheer-menu.php">Beheer menu</custom-knop>
+							<custom-knop variant="primair" href="/public/menu.php">Bekijk menu</custom-knop>
 						</div>
 					</article>
 
