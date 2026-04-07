@@ -84,7 +84,6 @@
     <div class="container">
       <div class="section-head">
         <h2>Waarom hier eten?</h2>
-        <p>Simple cards zoals je wireframe, maar "echte website" vibes.</p>
       </div>
 
       <div class="cards">
