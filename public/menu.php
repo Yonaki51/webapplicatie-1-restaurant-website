@@ -56,6 +56,10 @@ foreach ($result as $dish) {
   <!-- ========== HOOFDINHOUD ========== -->
   <main class="section">
     <div class="container">
+      <form class="menu-search" method="GET" action="menu.php">
+        <input type="text" name="zoek" placeholder="Zoek een gerecht...">
+        <button type="submit" class="btn btn-primary">Zoeken</button>
+      </form>
       <div class="panel">
         <?php
         // Loop door elke categorie en toon de bijbehorende gerechten
