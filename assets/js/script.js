@@ -1,7 +1,8 @@
 class CustomKnop extends HTMLElement {
 
-    connectedcallback() {
-        this.innerHTML = `<a>knop</a>`;
+    connectedCallback() {
+        const href = this.getAttribute('href') || '#';
+        this.innerHTML = `<a href="${href}">${this.textContent}</a>`;
     }
 }
 
